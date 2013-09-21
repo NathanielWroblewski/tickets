@@ -4,7 +4,6 @@ $(document).ready(function(){
     var latitude  = 80;
     var longitude = -122;
 
-    // create a map in the "map" div, set the view to a given place and zoom
     var map = L.map('map').setView([51.505, -0.09], 13);
 
     L.tileLayer('http://{s}.tile.cloudmade.com/26d0b59d4044441e8bb7ebecb61a875f/997/256/{z}/{x}/{y}.png', {
@@ -13,8 +12,21 @@ $(document).ready(function(){
     }).addTo(map);
 
 // add a marker in the given location, attach some popup content to it and open the popup
-    L.marker([51.5, -0.09]).addTo(map)
-      .bindPopup('A pretty CSS3 popup. <br> Easily customizable.')
-      .openPopup();
+    var marker;
+
+    marker = L.marker([51.5, -0.09]);
+
+    marker.addTo(map).bindPopup('A pretty CSS3 popup. <br> Easily customizable.').openPopup();
+
+    marker.dragging.enable();
+
+    marker.on('dragend', function(e){
+      var result = marker.getLatLng();
+      alert(result);
+    });
+
+    // $.ajax('https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=FALSE&key=AIzaSyDM6yN33Pu4sCHM823vSiEzYfirrPHFPLw&input=berlin', {
+
+    // }
   }
 });

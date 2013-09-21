@@ -1,2 +1,7 @@
 %div{id: 'itinerary-show'}
   %div{id: 'map'}
+  = form_tag '/' do
+    = label_tag :enter_your_location
+    = text_field_tag :location
+
+https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=FALSE&key=AIzaSyDM6yN33Pu4sCHM823vSiEzYfirrPHFPLw&input=berlin
