@@ -6,6 +6,7 @@ gem 'rails', '4.0.0'
 
 gem 'coffee-rails', '~> 4.0.0'
 gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'haml'
 gem 'haml_coffee_assets'
 gem 'jbuilder', '~> 1.2'
 gem 'jquery-rails'
