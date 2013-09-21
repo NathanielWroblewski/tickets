@@ -17,7 +17,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: prop_development
+  database: tickets_development
   pool: 5
   username:
   password:
@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: prop_test
+  database: tickets_test
   pool: 5
   username:
   password:
@@ -54,7 +54,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: prop_production
+  database: tickets_production
   pool: 5
   username:
   password:
