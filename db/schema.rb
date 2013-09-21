@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(version: 20130921215413) do
   enable_extension "plpgsql"
 
   create_table "itineraries", force: true do |t|
+    t.string  "title"
     t.integer "user_id"
   end
 
