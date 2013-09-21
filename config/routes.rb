@@ -1,4 +1,6 @@
 Prop::Application.routes.draw do
+  root to: 'users#new'
+
 
   resources :users, only: [:new, :create]
   resources :itineraries, only: [:index, :show]
