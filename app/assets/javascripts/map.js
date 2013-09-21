@@ -21,8 +21,16 @@ $(document).ready(function(){
     marker.dragging.enable();
 
     marker.on('dragend', function(e){
-      var result = marker.getLatLng();
-      alert(result);
+      var latitude = marker.getLat().lat;
+      var longitude = marker.getLat().lat;
+      $('.pin-it').data('lat', latitude);
+      $('.pin-it').data('long', longitude);
+    });
+
+    $('.pin-it').on('submit', function(){
+      $.ajax('/map', {
+
+      })
     });
 
     // $.ajax('https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=FALSE&key=AIzaSyDM6yN33Pu4sCHM823vSiEzYfirrPHFPLw&input=berlin', {
