@@ -3,7 +3,6 @@ class Itinerary < ActiveRecord::Base
   has_many :tickets
 
   def locations
-  	locations = self.tickets.map(&:location)
-  	locations.uniq!
+  	tickets.map(&:location).uniq
   end
 end
