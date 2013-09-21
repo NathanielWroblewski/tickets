@@ -1,0 +1,7 @@
+$em-base: 16px;
+
+@function px-to-em($value)  {
+  $value: $value / $em-base * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
