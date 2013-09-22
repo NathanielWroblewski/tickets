@@ -11,48 +11,46 @@ $(document).ready(function(){
       maxZoom: 18
     }).addTo(map);
 
-// add a marker in the given location, attach some popup content to it and open the popup
-    var marker;
+  // add a marker in the given location, attach some popup content to it and open the popup
+  var marker;
 
-    marker = L.marker([25.2000, 55.3000]);
+  marker = L.marker([25.2000, 55.3000]);
 
-    marker.addTo(map).bindPopup('Drag Me!').openPopup();
+  marker.addTo(map).bindPopup('Drag Me!').openPopup();
 
-    marker.dragging.enable();
+  marker.dragging.enable();
 
-    marker.on('dragend', function(e){
-      var latitude = marker.getLatLng().lat;
-      var longitude = marker.getLatLng().lng;
-      $.ajax({
-        url: '/save_lat_long',
-        type: 'POST',
-        data: { lat: latitude, long: longitude }
-      }).done(function(data){
-        $('.add-new-ticket-location').val(data.city + ', ' + data.region)
-        $('.add-new-ticket-location').val(data.city + ', ' + data.region)
-      });
+  marker.on('dragend', function(e){
+    var latitude = marker.getLatLng().lat;
+    var longitude = marker.getLatLng().lng;
+    $.ajax({
+      url: '/save_lat_long',
+      type: 'POST',
+      data: { lat: latitude, long: longitude }
+    }).done(function(data){
+      $('.add-new-ticket-location').val(data.city + ', ' + data.region)
     });
+  });
 
-    function search() {
-      var query = $('.pin-it #location').val()
-      $.ajax({
-        url: '/search_query',
-        type: 'POST',
-        data: { query: query }
-      }).done(function(data){
-        var locLatitude = parseFloat(data.latitude);
-        var locLongitude = parseFloat(data.longitude);
-        map.removeLayer(marker);
-        map.setView([locLatitude, locLongitude], 11);
-        marker = L.marker([locLatitude, locLongitude]);
-        marker.addTo(map);
-        marker.dragging.enable();
-      });
-    }
-
-    $('.search-text').on('keyup', function(){
-      $.debounce( 250, search )
+  $('.search-text').on( 'submit', function(e) {
+    e.preventDefault();
+    var query = $('.pin-it #places').val()
+    $.ajax({
+      url: '/search_query',
+      type: 'POST',
+      data: { query: query }
+    }).done(function(data){
+      var locLatitude = parseFloat(data.latitude);
+      var locLongitude = parseFloat(data.longitude);
+      map.removeLayer(marker);
+      map.setView([locLatitude, locLongitude], 11);
+      marker = L.marker([locLatitude, locLongitude]);
+      marker.addTo(map);
+      marker.dragging.enable();
     });
+  });
+
+
 
 
   }
