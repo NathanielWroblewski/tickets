@@ -22,21 +22,13 @@ $(document).ready(function(){
 
     marker.on('dragend', function(e){
       var latitude = marker.getLatLng().lat;
-      var longitude = marker.getLatLng().lat;
-      $('.pin-it').data('lat', latitude);
-      $('.pin-it').data('long', longitude);
-    });
-
-    $('.pin-it').on('submit', function(e){
-      e.preventDefault();
-      var latitude = $('.pin-it').data('lat');
-      var longitude = $('.pin-it').data('long');
+      var longitude = marker.getLatLng().lng;
       $.ajax({
         url: '/save_lat_long',
         type: 'POST',
         data: { lat: latitude, long: longitude }
-      }).done(function(){
-        alert('yay');
+      }).done(function(data){
+        $('.add-new-ticket-location').val(data.city + ', ' + data.region)
       });
     });
   }
