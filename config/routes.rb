@@ -5,6 +5,7 @@ Prop::Application.routes.draw do
 
   post '/save_lat_long', to: 'itineraries#save_lat_long'
   post '/search_query', to: 'itineraries#search_query'
+  post '/places_api', to: 'itineraries#places'
 
 
   resources :users, only: [:new, :create]
