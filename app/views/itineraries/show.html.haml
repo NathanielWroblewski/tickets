@@ -110,11 +110,12 @@
 .visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row.mobile-tickets
     - if @itinerary && @itinerary.tickets.present?
-      - @itinerary.tickets.each do |ticket|
-        .col-xs-12.itinerary-item.text-center
-          = image_tag ticket.photo.url
-          = ticket.location
-          = ticket.title
+      - @itinerary.tickets.each_with_index do |ticket, index|
+        .col-xs-12.itinerary-item.text-center{class: "back#{index % 4 + 1}"}
+          / = image_tag ticket.photo.url
+          %h1= ticket.title
+          %h3= ticket.location
+          %p= ticket.description
           = form_for ticket, :html => { class: "photo-uploader" } do |form|
             = form.file_field :photo
             = form.submit "Submit"
