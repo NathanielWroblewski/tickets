@@ -5,7 +5,6 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    current_user = User.new # delete me
     if current_user.itineraries.first
       @itinerary = current_user.itineraries.first
     else

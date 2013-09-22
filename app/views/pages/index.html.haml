@@ -8,14 +8,16 @@
   =password_field_tag
   =submit_tag('Log In')
 
+%br
+
 =form_for @user do
   =label_tag 'Username:'
   =text_field_tag 'user[username]'
   =label_tag 'Password:'
   =password_field_tag 'user[password]'
-  =email_field_tag 'Email:'
-  =password_field_tag 'user[email]'
-  %button Sign Up
+  =label_tag 'Email:'
+  =email_field_tag 'user[email]'
+  =submit_tag 'Sign Up'
 
 
 / Display errors
