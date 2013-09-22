@@ -10,10 +10,11 @@
   .row
     .col-xs-12
       %h2 Itinerary
-      %ul
-        - if @itinerary
+      %ul{ class: 'my-itinerary' }
+        - if @itinerary && @itinerary.tickets.present?
           - @itinerary.tickets.each do |ticket|
             %li
+              = image_tag ticket.photo.url
               = ticket.location
               = ticket.title
       = form_tag '/', class: 'add-new-ticket' do
