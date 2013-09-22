@@ -14,8 +14,9 @@ html, body {
         'recommendations/*',
         'map';
 
-.navbar-brand {
-  color:$white;
-  font-weight: $lightFont;
-  font-family: $defaultFont;
+.navbar{
+  margin-bottom: 0;
+  // color:$white;
+  // font-weight: $lightFont;
+  // font-family: $defaultFont;
 }

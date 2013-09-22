@@ -1,0 +1,6 @@
+- if @tickets.length <= 2
+  %h2 Where are you traveling?
+  =text_field_tag('', '', class: 'recommenadations-destination')
+  =submit_tag('Submit')
+- else
+  / display tickets

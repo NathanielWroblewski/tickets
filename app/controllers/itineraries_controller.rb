@@ -46,4 +46,11 @@ class ItinerariesController < ApplicationController
     render json: results
   end
 
+  def places
+    params[:search]
+    response = HTTParty.post("https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=FALSE")
+    p '*' * 1_000
+    p response
+  end
+
 end

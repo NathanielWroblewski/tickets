@@ -50,4 +50,9 @@ $(document).ready(function(){
       });
     });
   }
+  if (Modernizr.mq('only screen and (max-width: 768px)') ){
+    $("#map").prependTo('.modal-body');
+    console.log($("#map"))
+    console.log("hello")
+  }
 });

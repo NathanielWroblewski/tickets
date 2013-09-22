@@ -1,10 +1,9 @@
 Prop::Application.routes.draw do
-  get "recommendations/show"
-  get "recommendations/index"
   root to: 'users#new'
 
   post '/save_lat_long', to: 'itineraries#save_lat_long'
   post '/search_query', to: 'itineraries#search_query'
+  post '/places_api', to: 'itineraries#places'
 
 
   resources :users, only: [:new, :create]
@@ -12,6 +11,7 @@ Prop::Application.routes.draw do
   resources :pages, only: [:index, :show]
   resources :tickets#, only: :create
   resources :sessions, only: [:create, :delete, :new]
+  resources :recommendations, only: [:show, :index]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
