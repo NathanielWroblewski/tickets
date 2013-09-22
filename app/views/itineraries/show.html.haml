@@ -4,22 +4,23 @@
       .col-xs-8.col-sm-offset-2
         %div{id: 'itinerary-show'}
           %div{id: 'map'}
+            = form_tag '/', class: 'pin-it' do
+              = text_field_tag :location,"", {class: 'form-control .add-new-ticket-location', placeholder: "Extreme Dubai Pseudo-Winter"}
         .col-xs-6
-          = form_tag '/', class: 'pin-it' do
-            = label_tag :enter_your_location
-            = text_field_tag :location,"", {class: 'form-control .add-new-ticket-location', placeholder: "Extreme Dubai Pseudo-Winter"}
-            = submit_tag 'Lookup'
-          = form_tag '/' do
-            = label_tag :title
-            = text_field_tag :title, '', {class: 'form-control .add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
-            = label_tag :description
-            = text_field_tag :description, '', {class: 'form-control .add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
-            = label_tag :location
-            = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
-            = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
           .modal-footer
-            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
-            = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
+            %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
+          .revealed-add-itinerary
+            = form_tag '/', :class => "add-new-ticket" do
+              = label_tag :title
+              = text_field_tag :title, '', {class: 'form-control add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
+              = label_tag :description
+              = text_field_tag :description, '', {class: 'form-control add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
+              = label_tag :location
+              = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
+              = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+            .modal-footer
+              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+              = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
         .col-xs-6
           .row
             .col-xs-12
