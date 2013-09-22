@@ -27,7 +27,7 @@ end
 parameters = ActionController::Parameters.new(
                 :when => Time.now + (rand(20) * 1000),
                 title: Faker::Lorem.sentence(word_count = 4),
-                description: Faker::Lorem.paragraph(sentence_count = 3),
+                description: Faker::Lorem.paragraph(sentence_count = 1),
                 blog_url: Faker::Internet.url,
                 location: Faker::Name.last_name,
                 itinerary_id: rand(20)
