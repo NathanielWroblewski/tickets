@@ -5,13 +5,14 @@ module RecommendationsHelper
 		locations = user_itinerary.locations
 		tickets = Ticket.at_locations(locations)
 		itineraries = filter_similar_itineraries(tickets)
-		recommendations = itineraries.map(&:tickets).flatten - user_itinerary.tickets
+		recommendations = itineraries.map(&:tickets).map {|col| col.to_a }.flatten
+		p user_itinerary.tickets.to_a
 		# filter_times(recommendations, user_itinerary.tickets )
 	end
 
 	def filter_similar_itineraries(tickets)
 		ticket_count = Hash.new(0)
-		tickets.each { |ticket| ticket_count[ticket.itinerary_id] += 1 }
+		tickets.flatten.each { |ticket| ticket_count[ticket.itinerary_id] += 1 }
 		similar_itineraries = []
 		ticket_count.each do |key, value|
 			similar_itineraries << Itinerary.find(key) if value >= 2

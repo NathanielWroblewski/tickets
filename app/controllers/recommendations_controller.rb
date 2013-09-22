@@ -1,5 +1,7 @@
 class RecommendationsController < ApplicationController
 
+	include RecommendationsHelper
+
   def index
   	if current_user.itineraries.last.tickets.size < 3
   		render '/recommendations/index'
