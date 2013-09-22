@@ -20,7 +20,7 @@ Prop::Application.configure do
     :s3_credentials => {
       :bucket => "emirateshackathon.tckts",
       :access_key_id => "AKIAITHRDZ2EDCI4M2ZA",
-      :secret_access_key => "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"]
+      :secret_access_key => "QO79D3/3y7rnXoCxEcYMMAsQmQjFx0K1jANOfXeB"
     }
   }
 end
