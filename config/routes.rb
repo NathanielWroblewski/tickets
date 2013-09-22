@@ -1,5 +1,5 @@
 Prop::Application.routes.draw do
-  root to: 'pages#index'
+  root to: 'users#new'
 
   post '/save_lat_long', to: 'itineraries#save_lat_long'
 
