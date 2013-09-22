@@ -1,4 +1,6 @@
 Prop::Application.routes.draw do
+  get "reccomendation/show"
+  get "reccomendation/index"
   root to: 'users#new'
 
   post '/save_lat_long', to: 'itineraries#save_lat_long'
