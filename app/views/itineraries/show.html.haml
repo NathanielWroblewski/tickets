@@ -4,7 +4,7 @@
       .col-xs-8.col-sm-offset-2
         %div{id: 'itinerary-show'}
           %div{id: 'map'}
-            = form_tag '/', class: 'pin-it' do
+            = form_tag '#', class: 'pin-it search-text' do
               = text_field_tag :location,"", {id:"places", class: 'form-control input-lg', placeholder: "Enter Any Location in the World!"}
   .row
     .col-xs-12
