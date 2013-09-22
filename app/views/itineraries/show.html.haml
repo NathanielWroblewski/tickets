@@ -130,7 +130,7 @@
       = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
   - if @itinerary && @itinerary.tickets.present?
     - @itinerary.tickets.each_with_index do |ticket, index|
-      .col-xs-12.itinerary-item.text-center{class: "back#{index % 4 + 1}"}
+      .col-xs-12.itinerary-item.text-center{class: "back#{rand(1..9)}"}
         / = image_tag ticket.photo.url
         %h1= ticket.title
         %h3= ticket.location
@@ -138,7 +138,7 @@
         = form_for ticket, :html => { class: "photo-uploader" } do |form|
           = form.file_field :photo, :class=> "upload-photo"
           = form.submit "Upload a photo", :class => "btn btn-success btn-md"
-    
+
 
 
 / Button trigger modal

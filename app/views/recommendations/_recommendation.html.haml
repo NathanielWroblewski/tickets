@@ -1,5 +1,5 @@
 .row
-  .col-xs-12.full-height.bottom-shadow{:class=> "back#{rand(1..4)}"}
+  .col-xs-12.full-height.bottom-shadow{:class=> "back#{rand(1..9)}"}
     = check_box_tag "#{recommendation.id}"
     = label_tag "#{recommendation.id}" do
       .location= recommendation.location
