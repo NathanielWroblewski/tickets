@@ -25,6 +25,7 @@
               %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
               = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
         %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
+        = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
   .row.wtf
     .col-xs-8.col-sm-offset-2
       .well.my-itinerary
@@ -125,19 +126,20 @@
 /MOBILE
 .visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row.mobile-tickets
-    - if @itinerary && @itinerary.tickets.present?
-      - @itinerary.tickets.each_with_index do |ticket, index|
-        .col-xs-12.itinerary-item.text-center{class: "back#{index % 4 + 1}"}
-          / = image_tag ticket.photo.url
-          %h1= ticket.title
-          %h3= ticket.location
-          %p= ticket.description
-          = form_for ticket, :html => { class: "photo-uploader" } do |form|
-            = form.file_field :photo
-            = form.submit "Submit"
-    .well{style: "max-width: 400px; margin: 0 auto 10px;"}
+    .col-xs-12
       %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
-      = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
+      = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
+  - if @itinerary && @itinerary.tickets.present?
+    - @itinerary.tickets.each_with_index do |ticket, index|
+      .col-xs-12.itinerary-item.text-center{class: "back#{index % 4 + 1}"}
+        / = image_tag ticket.photo.url
+        %h1= ticket.title
+        %h3= ticket.location
+        %p= ticket.description
+        = form_for ticket, :html => { class: "photo-uploader" } do |form|
+          = form.file_field :photo, :class=> "upload-photo"
+          = form.submit "Upload a photo", :class => "btn btn-success btn-md"
+    
 
 
 / Button trigger modal
