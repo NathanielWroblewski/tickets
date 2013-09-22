@@ -33,10 +33,10 @@
     </ul> -->
   
   <span class='layout-nav-bar navbar-brand'>
-    <span> <a href='/itineraries/show'> Itineraries </a> </span>
-    <span> <a href='/recommendations'> Recommendations </a> </span>
+    <span class='glyphicon glyphicon-th-list'><a href='/itineraries/show'></a> </span>
+    <span class='glyphicon glyphicon-random'><a href='/recommendations'></a></span>
     <% if current_user %>
-      <span><a href='/sessions/<%= current_user.id %>'>Logout</a></span>
+      <span class='glyphicon glyphicon-log-out'><a href='/sessions/<%= current_user.id %>'></a></span>
     <% end %>
   </span>
 </div>

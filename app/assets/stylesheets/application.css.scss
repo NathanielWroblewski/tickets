@@ -3,18 +3,8 @@ html, body {
 
 }
 
-.layout-nav-bar {
-  float: right;
-  a {
-    text-decoration: none;
-    color: #777;
-  }
-  li {
-    display: inline;
-    list-style-type: none;
-    margin-left: 15px;
-  }
-}
+
+
 
 .centered {
   float: none;
@@ -31,7 +21,17 @@ html, body {
 
 .navbar{
   margin-bottom: 0;
+  .navbar-header{
+    width:100%;
+  }
   // color:$white;
   // font-weight: $lightFont;
   // font-family: $defaultFont;
+  .layout-nav-bar {
+    float: right;
+    width: 12%;
+    a {
+      margin-left: 5px;
+    }
+  }
 }
