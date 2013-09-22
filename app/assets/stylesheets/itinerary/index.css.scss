@@ -6,4 +6,14 @@
   font-family: $defaultFont;
   font-weight: $lighterFont;
   font-size: $largerFont;
+  z-index: 99;
+  h1 {
+    z-index: 99;
+  }
+  .itinerary-image{
+  z-index: -5;
+  width:100%;
+  opacity: 0.4;
+  /*position:absolute;*/
+  }
 }

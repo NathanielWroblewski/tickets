@@ -1,10 +1,61 @@
-.container
-  .row
-    .col-xs-12.text-center
+.container.screen.b
+  .row.screen-centered
+    .col-xs-12.text-center.logo.bottom-spaced
       TCKT
   .row.bottom-spaced
     .col-xs-6.centered
-      = link_to 'Login', '', class: 'btn btn-primary btn-lg btn-block'
+      %button.btn.btn-block.btn-primary{data: {toggle: 'modal', target: '#user-login'}} Login
   .row
     .col-xs-6.centered
-      = link_to 'Register', '', class: 'btn btn-primary btn-lg btn-block'
+      %button.btn.btn-block.btn-primary{data: {toggle: 'modal', target: '#user-register'}} Register
+  .row.screen-centered
+    .col-xs-12
+      .modal.fade#user-login{role: 'dialog', tabindex: '-1'}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              Login
+              %button{class: 'close', data: {dismiss: 'modal'}} &times
+            .modal-body
+              = form_tag '/login' do
+                .row
+                  .col-xs-12.text-left
+                    .form-group
+                      = label_tag 'username'
+                      = text_field_tag 'user[username]', '', class: 'form-control'
+                .row
+                  .col-xs-12.text-left
+                    .form-group
+                      = label_tag 'password'
+                      = text_field_tag 'user[password]', '', class: 'form-control'
+                .row.text-left
+                  .col-xs-12.btn.btn-block
+                    %button{type: 'submit', class: 'btn btn-block btn-primary'} Login
+  .row.screen-centered
+    .col-xs-12
+      .modal.fade#user-register{role: 'dialog', tabindex: '-1'}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              Register
+              %button{class: 'close', data: {dismiss: 'modal'}} &times
+            .modal-body
+              = form_tag '/register' do
+                .row
+                  .col-xs-12.text-left
+                    .form-group
+                      = label_tag 'username'
+                      = text_field_tag 'user[username]', '', class: 'form-control'
+                .row
+                  .col-xs-12.text-left
+                    .form-group
+                      = label_tag 'password'
+                      = text_field_tag 'user[password]', '', class: 'form-control'
+                .row
+                  .col-xs-12.text-left
+                    .form-group
+                      = label_tag 'password_confirmation','Re-type password'
+                      = text_field_tag 'user[password_confirmation]', '', class: 'form-control'
+                .row.text-left
+                  .col-xs-12.btn.btn-block
+                    %button{type: 'submit', class: 'btn btn-block btn-primary'} Register
