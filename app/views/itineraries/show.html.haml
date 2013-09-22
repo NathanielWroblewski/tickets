@@ -42,7 +42,7 @@
                           = image_tag slice[0].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[0].title
                           %p.text-center= slice[0].location
-                          = form_for slice[0], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[0], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -51,7 +51,7 @@
                           = image_tag slice[1].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[1].title
                           %p.text-center= slice[1].location
-                          = form_for slice[1], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[1], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -60,7 +60,7 @@
                           = image_tag slice[2].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[2].title
                           %p.text-center= slice[2].location
-                          = form_for slice[2], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[2], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -69,7 +69,7 @@
                           = image_tag slice[3].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[3].title
                           %p.text-center= slice[3].location
-                          = form_for slice[3], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[3], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                 - else
@@ -80,7 +80,7 @@
                           = image_tag slice[0].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[0].title
                           %p.text-center= slice[0].location
-                          = form_for slice[0], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[0], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -89,7 +89,7 @@
                           = image_tag slice[1].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[1].title
                           %p.text-center= slice[1].location
-                          = form_for slice[1], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[1], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -98,7 +98,7 @@
                           = image_tag slice[2].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[2].title
                           %p.text-center= slice[2].location
-                          = form_for slice[2], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[2], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
                     .col-xs-3
@@ -107,7 +107,7 @@
                           = image_tag slice[3].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[3].title
                           %p.text-center= slice[3].location
-                          = form_for slice[3], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                          = form_for slice[3], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
         %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"} ‹

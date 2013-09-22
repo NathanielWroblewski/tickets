@@ -6,7 +6,6 @@ module RecommendationsHelper
 		tickets = Ticket.at_locations(locations)
 		itineraries = filter_similar_itineraries(tickets)
 		recommendations = itineraries.map(&:tickets).map {|col| col.to_a }.flatten
-		p user_itinerary.tickets.to_a
 		# filter_times(recommendations, user_itinerary.tickets )
 	end
 
