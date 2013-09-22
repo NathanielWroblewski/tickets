@@ -9,7 +9,9 @@
 
   label {
     background: url('test.png');
+    background-size: cover;
     display: block;
     height: 30%;
+    margin-bottom: 0;
   }
 }
