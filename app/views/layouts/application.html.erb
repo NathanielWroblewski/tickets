@@ -5,7 +5,7 @@
   <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,600,800,300,500' rel='stylesheet' type='text/css'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <%= javascript_include_tag "//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"%>
-
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" %>
   <%= javascript_include_tag "application"%>  <!-- javascript -->
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css" %>
@@ -13,15 +13,37 @@
   <%= csrf_meta_tags %>
   <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
   <%= stylesheet_link_tag "application"%> <!-- css -->
+  <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 </head>
 <body>
 
-<div class="navbar navbar-inverse" role="navigation">
-          <ul class="nav navbar-nav">
-            <a class="navbar-brand" href="#">TCKTS</a>
-            <!-- <li><a href="#">ABOUT</a></li> -->
-          </ul>
-        </div>
+<nav class="navbar navbar-default" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+<!--     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button> -->
+    <a class="navbar-brand" href="#">TCKTS</a>
+<!--     <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul> -->
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <!-- <div class="collapse navbar-collapse navbar-ex1-collapse"> -->
+<!--     <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Link</a></li>
+      <li><a href="#">Link</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">Link</a></li>
+    </ul> -->
+  <!-- </div> --><!-- /.navbar-collapse -->
+</nav>
 
   <%= yield %>
 

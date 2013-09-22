@@ -1,55 +1,18 @@
-.visible-md.visible-lg.web-version
-  / #carousel-example-generic.carousel.slide
-  / / Indicators
-  / %ol.carousel-indicators
-  /   %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
-  /   %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
-  /   %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
-  / / Wrapper for slides
-  / .carousel-inner
-  /   .item.active
-  /     =image_tag 'index/rio-copy.jpg'
-  /     .carousel-caption
-  /       \...
-
-  /   .item
-  /     =image_tag 'index/rio-copy.jpg'
-  /     .carousel-caption
-  /       \...
-
-  /   .item
-  /     =image_tag 'index/rio-copy.jpg'
-  /     .carousel-caption
-  /       \...
-  /   \...
-  / / Controls
-  / %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic"}
-  /   %span.icon-prev
-  / %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic"}
-  /   %span.icon-next
-    
-  .jumbotron
-    %h1 TCKT
-    %p WTF 2DO 2DAY? TCKT HLPS PPL LKE U.
-    %button.btn.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
-    %button.btn.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-register'}} Register
-
-
-
-
-
-
-
-.screen.visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
+.screen 
   .row.screen-centered
-    .col-xs-12.text-center.logo.bottom-spaced
-      %h1 TCKT
-  .row.bottom-spaced
-    .col-xs-10.centered
-      %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
-  .row
-    .col-xs-10.centered
-      %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-register'}} Register
+    .col-xs-12.text-center.bottom-spaced
+      .col-xs-12.logo
+        %span.glyphicon.glyphicon-plane
+        %span.glyphicon.glyphicon-globe
+        %span.glyphicon.glyphicon-cutlery
+        %span.glyphicon.glyphicon-gift
+        %span.glyphicon.glyphicon-heart-empty
+        %br/ 
+        %h1 TCKTS
+      .centered.col-xs-6
+        %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
+      .centered.col-xs-6
+        %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-register'}} Register
 .row.screen-centered
   .col-xs-12
     .modal.fade#user-login{role: 'dialog', tabindex: '-1'}

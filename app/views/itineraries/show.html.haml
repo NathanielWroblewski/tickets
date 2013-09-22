@@ -4,35 +4,37 @@
       .col-xs-8.col-sm-offset-2
         %div{id: 'itinerary-show'}
           %div{id: 'map'}
+            = form_tag '/', class: 'pin-it' do
+              = text_field_tag :location,"", {class: 'form-control .add-new-ticket-location', placeholder: "Extreme Dubai Pseudo-Winter"}
         .col-xs-6
-          = form_tag '/', class: 'pin-it' do
-            = label_tag :enter_your_location
-            = text_field_tag :location,"", {class: 'form-control .add-new-ticket-location', placeholder: "Extreme Dubai Pseudo-Winter"}
-            = submit_tag 'Lookup'
-          = form_tag '/' do
-            = label_tag :title
-            = text_field_tag :title, '', {class: 'form-control .add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
-            = label_tag :description
-            = text_field_tag :description, '', {class: 'form-control .add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
-            = label_tag :location
-            = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
-            = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
           .modal-footer
-            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+            %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
+          .revealed-add-itinerary
+            = form_tag '/' do
+              = label_tag :title
+              = text_field_tag :title, '', {class: 'form-control add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
+              = label_tag :description
+              = text_field_tag :description, '', {class: 'form-control add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
+              = label_tag :location
+              = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
+              = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+            .modal-footer
+              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+              = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
         .col-xs-6
           .row
             .col-xs-12
-              %h2.text-center Whats on my itinerary 
+              %h2.text-center Whats on my itinerary
               %ul{ class: 'my-itinerary' }
                 - if @itinerary && @itinerary.tickets.present?
                   - @itinerary.tickets.each do |ticket|
                     .col-xs-12.itinerary-item.text-center
-                      = image_tag ticket.photo.url
+                      = image_tag ticket.photo.url, style: 'height:100px;width:100px;'
                       = ticket.location
                       = ticket.title
                       = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
                         = form.file_field :photo
-                        = form.submit "submit"
+                        = form.submit 'Upload Photo'
 .visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row
     - if @itinerary && @itinerary.tickets.present?
@@ -41,12 +43,12 @@
           = image_tag ticket.photo.url
           = ticket.location
           = ticket.title
-          = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+          = form_for ticket, :html => { class: "photo-uploader" } do |form|
             = form.file_field :photo
-            = form.submit "submit"
+            = form.submit "Submit"
     .well{style: "max-width: 400px; margin: 0 auto 10px;"}
       %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
-      %button.btn.btn-default.btn-lg.btn-block{type: "button"} Ideas
+      = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
 
 
 / Button trigger modal

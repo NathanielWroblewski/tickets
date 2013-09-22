@@ -10,14 +10,11 @@ class Ticket < ActiveRecord::Base
     :location,
     :photo
 
-  has_attached_file :photo, 
-                    default_url: '/images/TCKT.png', 
-                    storage: :fog, 
-                    fog_credentials: {
-                      provider: "Local", 
-                      local_root: "#{Rails.root}/public"}, 
-                    fog_directory: "", 
-                    fog_host: "localhost"
+  has_attached_file :photo, styles: {
+    thumb: '100x100>',
+    square: '200x200#',
+    medium: '300x300>'
+  }
 
   def self.at_locations(locations)
   	tickets_at_location = []
