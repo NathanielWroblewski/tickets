@@ -1,31 +1,77 @@
-.container
+.visible-md.visible-lg.web-version
   .row
     .col-xs-12
-      %div{id: 'itinerary-show'}
-        %div{id: 'map'}
-        = form_tag '/', class: 'pin-it' do
-          = label_tag :enter_your_location
-          = text_field_tag :location
-          = submit_tag 'Lookup'
+      .col-xs-8.col-sm-offset-2
+        %div{id: 'itinerary-show'}
+          %div{id: 'map'}
+        .col-xs-6
+          = form_tag '/', class: 'pin-it' do
+            = label_tag :enter_your_location
+            = text_field_tag :location,"", {class: 'form-control .add-new-ticket-location', placeholder: "Extreme Dubai Pseudo-Winter"}
+            = submit_tag 'Lookup'
+          = form_tag '/' do
+            = label_tag :title
+            = text_field_tag :title, '', {class: 'form-control .add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
+            = label_tag :description
+            = text_field_tag :description, '', {class: 'form-control .add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
+            = label_tag :location
+            = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
+            = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+          .modal-footer
+            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+        .col-xs-6
+          .row
+            .col-xs-12
+              %h2.text-center Whats on my itinerary 
+              %ul{ class: 'my-itinerary' }
+                - if @itinerary && @itinerary.tickets.present?
+                  - @itinerary.tickets.each do |ticket|
+                    .col-xs-12.itinerary-item.text-center
+                      = image_tag ticket.photo.url
+                      = ticket.location
+                      = ticket.title
+                      = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                        = form.file_field :photo
+                        = form.submit "submit"
+.visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row
-    .col-xs-12
-      %h2 Itinerary
-      %ul{ class: 'my-itinerary' }
-        - if @itinerary && @itinerary.tickets.present?
-          - @itinerary.tickets.each do |ticket|
-            %li
-              = image_tag ticket.photo.url
-              = ticket.location
-              = ticket.title
-              = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
-                = form.file_field :photo
-                = form.submit "submit"
-      = form_tag '/', class: 'add-new-ticket' do
-        = label_tag :title
-        = text_field_tag :title, '', class: 'add-new-ticket-title'
-        = label_tag :description
-        = text_field_tag :description, '', class: 'add-new-ticket-description'
-        = label_tag :location
-        = text_field_tag :location, '', class: 'add-new-ticket-location'
-        = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
-        = submit_tag 'Add Itinerary Item'
+    - if @itinerary && @itinerary.tickets.present?
+      - @itinerary.tickets.each do |ticket|
+        .col-xs-12.itinerary-item.text-center
+          = image_tag ticket.photo.url
+          = ticket.location
+          = ticket.title
+          = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+            = form.file_field :photo
+            = form.submit "submit"
+    .well{style: "max-width: 400px; margin: 0 auto 10px;"}
+      %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
+      %button.btn.btn-default.btn-lg.btn-block{type: "button"} Ideas
+
+
+/ Button trigger modal
+/ <a  class="btn btn-primary btn-lg">Launch demo modal</a>
+
+/ Modal
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+        %h4.modal-title Itinerary Addition
+      .modal-body
+        .col-xs-12
+          %div{id: 'itinerary-show mobile-map'}
+          = form_tag '/' do
+            = label_tag :title
+            = text_field_tag :title, '', {class: 'form-control', placeholder: "Extreme Dubai Pseudo-Winter"}
+            = label_tag :description
+            = text_field_tag :description, '', {class: 'form-control',placeholder: "Add 140 characters of awesome!"}
+            = label_tag :location
+            = text_field_tag :location, '', {class: 'form-control', placeholder: 'Dubai'}
+            = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+          .modal-footer
+            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+    / /.modal-content
+  / /.modal-dialog
+/ /.modal
