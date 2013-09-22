@@ -3,16 +3,22 @@
   height:100%;
   color:white;
   font-family: $defaultFont;
-  font-weight: $lighterFont;
+  font-weight: $lightFont;
   min-height: 200px;
   text-align: center;
-
-  h3{
-      color:white;
-  font-family: $defaultFont;
-  font-weight: $normalFont;
+  h1{
+    color:white;
+    font-family: $defaultFont;
+    font-size: $jumboFont;
+    font-weight: $heavyFont;
 
   }
+  h3{
+    color:white;
+    font-family: $defaultFont;
+    font-weight: $normalFont;
+  }
+
   // border:1px solid black;
   // /*height:100px;*/
   // /*background-color: $red;*/
@@ -26,7 +32,7 @@
   // width:100%;
   // opacity: 0.4;
   /*position:absolute;*/
-  }
+}
 }
 
 .pin-it{
@@ -56,10 +62,21 @@
 }
 
 .upload-photo{
-  bottom:0;
-  position: relative;
+ z-index: 999;
+ line-height: 0;
+ font-size: 50px;
+ position: absolute;
+ opacity: 0;
+ filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
+ cursor: pointer;
+ _cursor: hand;
+ margin: 0;
+ padding:0;
+ left:0;
 }
+.photo-field{
 
+}
 .back1{
   background-image: url("pic1.jpg");
   background-size:cover;
