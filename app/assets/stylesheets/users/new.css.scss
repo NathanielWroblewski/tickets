@@ -9,26 +9,23 @@
   -o-background-size: cover;
   background-size: cover;
   height: 100%;
-  // width: 100%;
   text-align: center;
-  h1{
-    font-family: $defaultFont;
-    font-size: $largerFont;
-    font-weight: $lightFont;
-  }
+  padding-top: 10%;
 
-  .screen-centered {
-    padding-top: 30%;
-  }
-  .modal {
-    // padding-top: 15%;
+  h1{
+    margin-top:0;
+    font-family: $defaultFont;
+    font-size: 2em;
+    font-weight: $lightFont;
   }
 }
 
 .logo {
   color: white;
-  font-weight: bold;
-  font-size: 5em;
+  // font-weight: bold;
+  font-family: $defaultFont;
+  font-size: $jumboFont;
+  font-weight: $lightFont;
 }
 
 .white-bg {
