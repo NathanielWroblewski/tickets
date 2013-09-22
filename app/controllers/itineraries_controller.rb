@@ -5,7 +5,8 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-
+    current_user = User.new # delete me
+    @itinerary = current_user.itineraries.first
   end
 
   def save_lat_long
