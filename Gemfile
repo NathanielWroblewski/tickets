@@ -19,7 +19,7 @@ gem 'protected_attributes'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'faker'
-gem 'fog'
+# gem 'fog'
 
 group :doc do
   gem 'sdoc', require: false
