@@ -29,7 +29,7 @@ parameters = ActionController::Parameters.new(
                 title: Faker::Lorem.sentence(word_count = 4),
                 description: Faker::Lorem.paragraph(sentence_count = 1),
                 blog_url: Faker::Internet.url,
-                location: Faker::Name.last_name,
+                location: Faker::Address.city + ", " + Faker::Address.country,
                 itinerary_id: rand(20)
                 )
 
