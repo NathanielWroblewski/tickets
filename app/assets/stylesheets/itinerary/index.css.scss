@@ -19,14 +19,25 @@
 }
 
 .pin-it{
-  z-index: 999;
+  z-index: 1999;
   position:relative;
   width:300px;
   margin:10px auto;
+  display: block;
+
 }
 #map{
   z-index: 1;
+  position: relative;
 }
 .add-new-ticket-location{
 
+}
+.spinner{
+  z-index: 999;
+  display: inline-block;
+  position:relative;
+  width:10%;
+  margin:0 auto;
+  float:right;
 }
