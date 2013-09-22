@@ -1,9 +1,12 @@
 Prop::Application.routes.draw do
-  root to: 'users#new'
+  root to: 'pages#index'
 
+  post '/save_lat_long', to: 'itineraries#save_lat_long'
 
   resources :users, only: [:new, :create]
   resources :itineraries, only: [:index, :show]
+  resources :pages, only: [:index, :show]
+  resources :sessions, only: [:create, :delete, :new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
