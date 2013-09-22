@@ -1,8 +1,8 @@
 <!-- <div class="container"> -->
 <div class="row">
   <div class="col-xs-12 itinerary-item text-center">
-  Dubai, UAE - Snowboarding 
-  <%#  image_tag "test.png", :class => "itinerary-image"   %> 
+    Dubai, UAE - Snowboarding 
+    <%#  image_tag "test.png", :class => "itinerary-image"   %> 
   </div> 
   <div class="col-xs-12 itinerary-item text-center">
     Dubai, UAE - Snowboarding
@@ -17,3 +17,50 @@
     Dubai, UAE - Snowboarding
   </div>
 </div>
+<!-- Button trigger modal -->
+<!-- <a  class="btn btn-primary btn-lg">Launch demo modal</a> -->
+<div class="well" style="max-width: 400px; margin: 0 auto 10px;">
+  <button data-toggle="modal" href="#myModal" type="button" class="btn btn-primary btn-lg btn-block">Add Itinerary</button>
+  <button type="button" class="btn btn-default btn-lg btn-block">Ideas</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Itinerary Addition</h4>
+      </div>
+      <div class="modal-body">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="Destination" class="col-lg-2 control-label">Where</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="Destination" placeholder="Dubai">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description" class="col-lg-2 control-label">Description</label>
+            <div class="col-lg-10">
+              <input type="text" class="form-control" id="description" placeholder="140: GONNA SNOWBOARD IN THE DESERT!">
+            </div>
+          </div>
+          <div class="form-group">
+
+          </div>
+          <div class="form-group">
+            <div class="col-lg-offset-2 col-lg-10">
+              <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+  </div><!-- /.modal -->
