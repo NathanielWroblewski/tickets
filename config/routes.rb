@@ -1,4 +1,9 @@
 Prop::Application.routes.draw do
+  root to: 'users#new'
+
+
+  resources :users, only: [:new, :create]
+  resources :itineraries, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +44,7 @@ Prop::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
