@@ -1,7 +1,10 @@
 class RecommendationsController < ApplicationController
-  def show
+  
+  def index
+    @tickets = current_user.itineraries.first.tickets
   end
 
-  def index
+  def show
+
   end
 end
