@@ -1,2 +1,13 @@
 .b { border: 1px solid red; }
 .bottom-spaced { margin-bottom: px-to-em(20px); }
+.container.screen {
+  background: image-url('background-0.png');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  .screen-centered {
+    margin-top: 30%;
+  }
+}

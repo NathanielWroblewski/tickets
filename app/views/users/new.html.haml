@@ -1,10 +1,30 @@
-.container
-  .row
+.container.screen.b
+  .row.screen-centered
     .col-xs-12.text-center
       TCKT
   .row.bottom-spaced
     .col-xs-6.centered
-      = link_to 'Login', '', class: 'btn btn-primary btn-lg btn-block'
+      = link_to 'Login', '#user-login', class: 'btn btn-primary btn-lg btn-block', data: {toggle: 'modal'}
   .row
     .col-xs-6.centered
       = link_to 'Register', '', class: 'btn btn-primary btn-lg btn-block'
+  .modal.fade#user-login{role: 'dialog', tabindex: '-1'}
+    .modal-dialog
+      .modal-content
+        .modal-header Login
+        .modal-body
+          = form_tag '/login' do
+            .row
+              .col-xs-2
+                = label_tag 'username'
+              .col-xs-4
+                = text_field_tag 'user[username]'
+            .row
+              .col-xs-2
+                = label_tag 'password'
+              .col-xs-4
+                = text_field_tag 'user[username]'
+            .modal-footer
+              .row
+                .col-xs-12
+                  = submit_tag 'Login'
