@@ -3,4 +3,8 @@
     = check_box_tag "#{recommendation.id}"
     = label_tag "#{recommendation.id}", style: "background: #{asset_path(recommendation.photo_file_name)}" do
       .location= recommendation.location
-      .title= truncate(recommendation.title, length: 25)
+      .title
+        %i{class: "icon-facebook", style: 'float:left;margin:10px;'}
+        %i{class: "icon-twitter", style: 'float:left;margin:10px;'}
+        %i{class: "icon-tumblr", style: 'float:left;margin:10px;'}
+        = truncate(recommendation.title, length: 25)
