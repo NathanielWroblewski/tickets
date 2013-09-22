@@ -5,6 +5,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
+  	@user = current_user
     if current_user.itineraries.try(:first)
       @itinerary = current_user.itineraries.first
     else

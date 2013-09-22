@@ -17,6 +17,9 @@
               = image_tag ticket.photo.url
               = ticket.location
               = ticket.title
+              = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                = form.file_field :photo
+                = form.submit "submit"
       = form_tag '/', class: 'add-new-ticket' do
         = label_tag :title
         = text_field_tag :title, '', class: 'add-new-ticket-title'
