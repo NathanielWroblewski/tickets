@@ -33,14 +33,42 @@
   }
 
   label {
+    position: relative;
     background: url('test.png');
     background-size: cover;
     display: block;
-    height: 100%;
+    height: inherit;
     margin-bottom: 0;
+    width: 100%;
   }
 
-  .row { height: 33.33%; }
+  .row {
+    height: 33.33%;
 
-  .full-height { height: 100%; }
+    & + .row {
+      border-top: 3px solid white;
+    }
+  }
+
+  .full-height { height: 100%; padding: 0;}
+
+  .title {
+    background: rgba(255,255,255,0.75);
+    bottom: 0;
+    color: rgb(72,72,72);
+    font-family: $defaultFont;
+    font-size: 1.5em;
+    line-height: 2em;
+    position: absolute;
+    text-align: right;
+    width: 100%;
+  }
+
+  .location {
+    color: white;
+    padding-left: px-to-em(5px);
+    font-family: $defaultFont;
+    font-weight: $normalFont;
+    font-size: 3em;
+  }
 }

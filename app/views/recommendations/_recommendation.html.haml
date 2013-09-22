@@ -1,0 +1,6 @@
+.row
+  .col-xs-12.full-height.bottom-shadow
+    = check_box_tag "#{recommendation.id}"
+    = label_tag "#{recommendation.id}", style: "background: #{asset_path(recommendation.photo_file_name)}" do
+      .location= recommendation.location
+      .title= truncate(recommendation.title, length: 25)
