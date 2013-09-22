@@ -1,0 +1,25 @@
+@function px-to-em($value)  {
+  $value: $value / $em-base * 1em;
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+$em-base: 16px;
+$normalFont: px-to-em(16px);
+$largeFont: px-to-em(24px);
+$largerFont: px-to-em(36px);
+$jumboFont: px-to-em(48px);
+
+$red: #D71920;
+$redDarker: #600e11;
+$redLight: #ff7579;
+$white: #FFFFFF;
+$black: black;
+
+//  default fonts
+$defaultFont: 'Raleway', sans-serif;
+$normalFont: 400; 
+$heavyFont: 600;
+$lightFont: 200;
+$lighterFont: 100;
+
