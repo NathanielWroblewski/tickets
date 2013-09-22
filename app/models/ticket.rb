@@ -7,7 +7,10 @@ class Ticket < ActiveRecord::Base
     :where,
     :description,
     :blog_url,
-    :location
+    :location,
+    :photo
+
+  has_attached_file :photo, default_url: asset_path 'TCKT.png'
 
   def self.at_locations(locations)
   	tickets_at_location = []
