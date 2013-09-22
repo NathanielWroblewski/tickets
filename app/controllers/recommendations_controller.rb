@@ -1,10 +1,19 @@
 class RecommendationsController < ApplicationController
 
   def index
-    @tickets = current_user.itineraries.first.tickets
+  	if current_user.itineraries.last.tickets.size < 3
+  		render '/recommendations/index'
+    else
+    	redirect_to '/recommendations/show'
+    end
   end
 
   def show
-    @recommendations = Ticket.all
+    @recommendations = get_recommendations(current_user.itineraries.last)
+  end
+
+  def tickets_by_location
+  	@tickets = Ticket.where(location: params[:destination])
+  	render :_simple_recommendations, layout: false
   end
 end
