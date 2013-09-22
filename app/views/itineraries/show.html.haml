@@ -23,56 +23,189 @@
               = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
         .col-xs-6
           .row
-            .col-xs-12
+            .col-xs-6
               %h2.text-center Whats on my itinerary
-              %ul{ class: 'my-itinerary' }
-                - if @itinerary && @itinerary.tickets.present?
-                  - @itinerary.tickets.each do |ticket|
-                    .col-xs-12.itinerary-item.text-center
-                      = image_tag ticket.photo.url, style: 'height:100px;width:100px;'
-                      = ticket.location
-                      = ticket.title
-                      = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
-                        = form.file_field :photo
-                        = form.submit 'Upload Photo'
-.visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
-  .row
-    - if @itinerary && @itinerary.tickets.present?
-      - @itinerary.tickets.each do |ticket|
-        .col-xs-12.itinerary-item.text-center
-          = image_tag ticket.photo.url
-          = ticket.location
-          = ticket.title
-          = form_for ticket, :html => { class: "photo-uploader" } do |form|
-            = form.file_field :photo
-            = form.submit "Submit"
-    .well{style: "max-width: 400px; margin: 0 auto 10px;"}
-      %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
-      = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
+
+/               %ul{ class: 'my-itinerary' }
+/                 - if @itinerary && @itinerary.tickets.present?
+/                   - @itinerary.tickets.each do |ticket|
+/                     .col-xs-12.itinerary-item.text-center
+/                       = image_tag ticket.photo.url, style: 'height:100px;width:100px;'
+/                       = ticket.location
+/                       = ticket.title
+/                       = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+/                         = form.file_field :photo
+/                         = form.submit 'Upload Photo'
+/ .visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
+/   .row
+/     - if @itinerary && @itinerary.tickets.present?
+/       - @itinerary.tickets.each do |ticket|
+/         .col-xs-12.itinerary-item.text-center
+/           = image_tag ticket.photo.url
+/           = ticket.location
+/           = ticket.title
+/           = form_for ticket, :html => { class: "photo-uploader" } do |form|
+/             = form.file_field :photo
+/             = form.submit "Submit"
+/     .well{style: "max-width: 400px; margin: 0 auto 10px;"}
+/       %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
+/       = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
 
 
-/ Button trigger modal
-/ <a  class="btn btn-primary btn-lg">Launch demo modal</a>
+/ / Button trigger modal
+/ / <a  class="btn btn-primary btn-lg">Launch demo modal</a>
 
-/ Modal
-#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
-        %h4.modal-title Itinerary Addition
-      .modal-body
-        .col-xs-12
-          %div{id: 'itinerary-show mobile-map'}
-          = form_tag '/' do
-            = label_tag :title
-            = text_field_tag :title, '', {class: 'form-control', placeholder: "Extreme Dubai Pseudo-Winter"}
-            = label_tag :description
-            = text_field_tag :description, '', {class: 'form-control',placeholder: "Add 140 characters of awesome!"}
-            = label_tag :location
-            = text_field_tag :location, '', {class: 'form-control', placeholder: 'Dubai'}
-            = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
-            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
-    / /.modal-content
-  / /.modal-dialog
-/ /.modal
+/ / Modal
+/ #myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", role: "dialog", tabindex: "-1"}
+/   .modal-dialog
+/     .modal-content
+/       .modal-header
+/         %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", type: "button"} ×
+/         %h4.modal-title Itinerary Addition
+/       .modal-body
+/         .col-xs-12
+/           %div{id: 'itinerary-show mobile-map'}
+/           = form_tag '/' do
+/             = label_tag :title
+/             = text_field_tag :title, '', {class: 'form-control', placeholder: "Extreme Dubai Pseudo-Winter"}
+/             = label_tag :description
+/             = text_field_tag :description, '', {class: 'form-control',placeholder: "Add 140 characters of awesome!"}
+/             = label_tag :location
+/             = text_field_tag :location, '', {class: 'form-control', placeholder: 'Dubai'}
+/             = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+/             %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+/     / /.modal-content
+/   / /.modal-dialog
+/ / /.modal
+/             .col-xs-6
+              .revealed-add-itinerary
+                = form_tag '/' do
+                  = label_tag :title
+                  = text_field_tag :title, '', {class: 'form-control add-new-ticket-title', placeholder: "Extreme Dubai Pseudo-Winter"}
+                  = label_tag :description
+                  = text_field_tag :description, '', {class: 'form-control add-new-ticket-description',placeholder: "Add 140 characters of awesome!"}
+                  = label_tag :location
+                  = text_field_tag :location, '', {class: 'form-control add-new-ticket-location', placeholder: 'Dubai'}
+                  = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+                .modal-footer
+                  %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+                  = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
+              %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
+  .row.wtf
+    .col-xs-8.col-sm-offset-2
+      .well.my-itinerary
+        #myCarousel.carousel.slide
+          %ol.carousel-indicators
+            - if @itinerary && @itinerary.tickets.present?
+              - (0..(@itinerary.tickets.each_slice(4).count - 1)).each do |num|
+                %li{class: "#{ num == 0 ? 'active' : '' }", data: {'slide-to' => "#{num}", "target" => "#myCarousel"} }
+          .carousel-inner
+            - if @itinerary && @itinerary.tickets.present?
+              - @itinerary.tickets.each_slice(4) do |slice|
+                - if slice[0] == @itinerary.tickets.first
+                  .item.active
+                    .col-xs-3
+                      - if slice[0]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[0].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[0].title
+                          %p.text-center= slice[0].location
+                          = form_for slice[0], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[1]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[1].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[1].title
+                          %p.text-center= slice[1].location
+                          = form_for slice[1], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[2]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[2].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[2].title
+                          %p.text-center= slice[2].location
+                          = form_for slice[2], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[3]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[3].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[3].title
+                          %p.text-center= slice[3].location
+                          = form_for slice[3], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                - else
+                  .item
+                    .col-xs-3
+                      - if slice[0]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[0].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[0].title
+                          %p.text-center= slice[0].location
+                          = form_for slice[0], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[1]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[1].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[1].title
+                          %p.text-center= slice[1].location
+                          = form_for slice[1], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[2]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[2].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[2].title
+                          %p.text-center= slice[2].location
+                          = form_for slice[2], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+                    .col-xs-3
+                      - if slice[3]
+                        %a.thumbnail{href: "#x"}
+                          = image_tag slice[3].photo.url, style: "max-width:100%;"
+                          %h3.text-center= slice[3].title
+                          %p.text-center= slice[3].location
+                          = form_for slice[3], :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
+                            = form.file_field :photo
+                            = form.submit 'Upload Photo'
+        %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"} ‹
+        %a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"} ›
+:css
+  .carousel {
+    margin-bottom: 0;
+    padding: 0 40px 30px 40px;
+  }
+  .carousel-control {
+    left: -12px;
+  }
+  .carousel-control.right {
+    right: -12px;
+  }
+  .carousel-indicators {
+    right: 50%;
+    top: auto;
+    bottom: 0px;
+    margin-right: -19px;
+  }
+  .carousel-indicators li {
+    background: #c0c0c0;
+  }
+  .carousel-indicators .active {
+  background: #333333;
+  }
+:javascript
+  $(document).ready(function() {
+    $('#myCarousel').carousel({
+      interval: 500
+    })
+  });
