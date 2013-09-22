@@ -29,6 +29,7 @@ $(document).ready(function(){
         data: { lat: latitude, long: longitude }
       }).done(function(data){
         $('.add-new-ticket-location').val(data.city + ', ' + data.region)
+        $('.add-new-ticket-location').val(data.city + ', ' + data.region)
       });
     });
 
