@@ -1,6 +1,9 @@
-%div{id: 'itinerary-show'}
-  %div{id: 'map'}
-  = form_tag '/', class: 'pin-it' do
-    = label_tag :enter_your_location
-    = text_field_tag :location
-    = submit_tag 'Pin It!'
+.container
+  .row
+    .col-xs-12
+      %div{id: 'itinerary-show'}
+        %div{id: 'map'}
+        = form_tag '/', class: 'pin-it' do
+          = label_tag :enter_your_location
+          = text_field_tag :location
+          = submit_tag 'Pin It!'

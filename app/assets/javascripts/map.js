@@ -16,7 +16,7 @@ $(document).ready(function(){
 
     marker = L.marker([51.5, -0.09]);
 
-    marker.addTo(map).bindPopup('A pretty CSS3 popup. <br> Easily customizable.').openPopup();
+    marker.addTo(map).bindPopup('Drag Me!').openPopup();
 
     marker.dragging.enable();
 
