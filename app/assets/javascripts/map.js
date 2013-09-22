@@ -21,20 +21,23 @@ $(document).ready(function(){
     marker.dragging.enable();
 
     marker.on('dragend', function(e){
-      var latitude = marker.getLat().lat;
-      var longitude = marker.getLat().lat;
+      var latitude = marker.getLatLng().lat;
+      var longitude = marker.getLatLng().lat;
       $('.pin-it').data('lat', latitude);
       $('.pin-it').data('long', longitude);
     });
 
-    $('.pin-it').on('submit', function(){
-      $.ajax('/map', {
-
-      })
+    $('.pin-it').on('submit', function(e){
+      e.preventDefault();
+      var latitude = $('.pin-it').data('lat');
+      var longitude = $('.pin-it').data('long');
+      $.ajax({
+        url: '/save_lat_long',
+        type: 'POST',
+        data: { lat: latitude, long: longitude }
+      }).done(function(){
+        alert('yay');
+      });
     });
-
-    // $.ajax('https://maps.googleapis.com/maps/api/place/autocomplete/json?sensor=FALSE&key=AIzaSyDM6yN33Pu4sCHM823vSiEzYfirrPHFPLw&input=berlin', {
-
-    // }
   }
 });
