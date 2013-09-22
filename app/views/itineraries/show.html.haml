@@ -5,14 +5,13 @@
         %div{id: 'itinerary-show'}
           %div{id: 'map'}
             = form_tag '/', class: 'pin-it' do
-              = text_field_tag :location,"", {id:"focusedInput", class: 'form-control input-lg add-new-ticket-location', placeholder: "Enter Any Location in the World!"}
-              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary hidden'} Submit
+              = text_field_tag :location,"", {id:"places", class: 'form-control input-lg', placeholder: "Enter Any Location in the World!"}
   .row
     .col-xs-12
       .col-xs-8.col-sm-offset-2
         %h2.text-center Whats on my itinerary
         .revealed-add-itinerary
-          = form_tag '/' do
+          = form_tag '/', {class: 'add-new-ticket'} do
             = label_tag :title
             = text_field_tag :title, '', {class: 'form-control add-new-ticket-title',placeholder: "Extreme Dubai Pseudo-Winter"}
             = label_tag :description
@@ -20,9 +19,9 @@
             = label_tag :location
             = text_field_tag :location, '', {class: 'form-control add-new-ticket-location',placeholder: 'Dubai'}
             = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
-          .modal-footer
-            %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
-            = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
+            .modal-footer
+              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
+              = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
         %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
   .row.wtf
     .col-xs-8.col-sm-offset-2
@@ -113,29 +112,6 @@
                             = form.submit 'Upload Photo'
         %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"} ‹
         %a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"} ›
-:css
-  .carousel {
-    margin-bottom: 0;
-    padding: 0 40px 30px 40px;
-  }
-  .carousel-control {
-    left: -12px;
-  }
-  .carousel-control.right {
-    right: -12px;
-  }
-  .carousel-indicators {
-    right: 50%;
-    top: auto;
-    bottom: 0px;
-    margin-right: -19px;
-  }
-  .carousel-indicators li {
-    background: #c0c0c0;
-  }
-  .carousel-indicators .active {
-  background: #333333;
-  }
 :javascript
   $(document).ready(function() {
     $('#myCarousel').carousel({

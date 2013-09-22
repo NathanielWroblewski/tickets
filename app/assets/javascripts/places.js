@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var input = document.getElementById('location');
+  var input = document.getElementById('places');
   var options = {
     types: ['(cities)']
   };

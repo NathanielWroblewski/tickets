@@ -49,7 +49,9 @@ $(document).ready(function(){
       });
     }
 
-    $('.search-text').keyup( $.debounce( 250, search ) );
+    $('.search-text').on('keyup', function(){
+      $.debounce( 250, search )
+    });
 
 
   }
