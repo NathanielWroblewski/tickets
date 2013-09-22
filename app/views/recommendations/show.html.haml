@@ -1,6 +1,2 @@
 .container.recommendations
-  %ul
-  - @recommendations.each do |ticket|
-    %li
-      = ticket.title
-      = ticket.description
+  = render partial: 'recommendation', collection: @recommendations
