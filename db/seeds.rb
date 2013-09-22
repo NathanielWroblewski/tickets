@@ -7,25 +7,26 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require 'faker'
 
+p 'Creating Users/Itineraries'
 20.times do |i|
-
-  User.create(
+  @user = User.create(
               username: Faker::Internet.user_name,
               email: Faker::Internet.email,
               password: Faker::Internet.password
               )
-  
 
   parameters = ActionController::Parameters.new(title: Faker::Lorem.sentence(word_count = 6),
-  user_id: i+1)
+                                                user_id: @user.id)
   Itinerary.create(parameters.permit(:title, :user_id))
 
 end
+
 
 def seed_image(file_name)
   File.open(File.join(Rails.root, "/app/assets/images/#{file_name}"))
 end
 
+p 'Adding Tickets'
 100.times do
 
   parameters = ActionController::Parameters.new(
