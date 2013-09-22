@@ -22,8 +22,7 @@ $ ->
             itinerary_id: itinerary_id
             location: location
       .done (data) ->
-        $('.my-itinerary').append '<li>' +
-          '<h1>' + data.title + '</h1>' +
-          '<h3>' + data.location + '</h3>' +
-          '<p>' + data.description + '</p></li>'
+        console.log("hello")
+        $('.my-itinerary').append "<div class='col-xs-12 itinerary-item text-center
+          '> #{data.title} #{data.location}</div>"
 
