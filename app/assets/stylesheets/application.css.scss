@@ -1,5 +1,19 @@
 html, body {
   height: 100%;
+
+}
+
+.layout-nav-bar {
+  float: right;
+  a {
+    text-decoration: none;
+    color: #777;
+  }
+  li {
+    display: inline;
+    list-style-type: none;
+    margin-left: 15px;
+  }
 }
 
 .centered {
@@ -9,11 +23,11 @@ html, body {
 
 
 @import 'variables',
-        'users/*',
-        'itinerary/*',
-        'recommendations/*',
-        'map',
-        'nate';
+'users/*',
+'itinerary/*',
+'recommendations/*',
+'map',
+'nate';
 
 .navbar{
   margin-bottom: 0;
