@@ -1,0 +1,15 @@
+.recommendations-list {
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked + label {
+      border: 1px solid red;
+    }
+  }
+
+  label {
+    background: url('test.png');
+    display: block;
+    height: 30%;
+  }
+}
