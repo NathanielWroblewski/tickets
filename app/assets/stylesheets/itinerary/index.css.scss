@@ -17,3 +17,13 @@
   /*position:absolute;*/
   }
 }
+
+.pin-it{
+  z-index: 999;
+  position:relative;
+  width:300px;
+  margin:0 auto;
+}
+#map{
+  z-index: 1;
+}
