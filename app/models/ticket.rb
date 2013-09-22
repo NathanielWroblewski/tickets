@@ -10,7 +10,7 @@ class Ticket < ActiveRecord::Base
     :location,
     :photo
 
-  has_attached_file :photo, default_url: asset_path 'TCKT.png'
+  has_attached_file :photo, default_url: 'images/TCKT.png'
 
   def self.at_locations(locations)
   	tickets_at_location = []

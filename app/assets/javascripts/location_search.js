@@ -8,7 +8,7 @@ $(document).ready(function(){
         type: 'POST',
         data: { query: query }
       }).done(function(data){
-        
+
     });
 	});
 
