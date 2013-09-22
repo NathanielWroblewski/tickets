@@ -8,10 +8,15 @@
 }
 /* Reposition the controls slightly */
 .carousel-control {
-  left: -12px;
+  left: 15px;
+  opacity: 0;
 }
+.carousel-control:hover {
+  opacity: 0.1;
+}
+
 .carousel-control.right {
-  right: -12px;
+  right: 15px;
 }
 /* Changes the position of the indicators */
 .carousel-indicators {
@@ -22,8 +27,8 @@
 }
 /* Changes the colour of the indicators */
 .carousel-indicators li {
-  background: #c0c0c0;
+  background: white;
 }
 .carousel-indicators .active {
-background: #333333;
+background: white;
 }
