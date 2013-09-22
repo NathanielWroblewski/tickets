@@ -32,8 +32,7 @@ $(document).ready(function(){
       });
     });
 
-    $('.pin-it').on('submit', function(e) {
-      e.preventDefault();
+    function search() {
       var query = $('.pin-it #location').val()
       $.ajax({
         url: '/search_query',
@@ -48,7 +47,11 @@ $(document).ready(function(){
         marker.addTo(map);
         marker.dragging.enable();
       });
-    });
+    }
+
+    $('.search-text').keyup( $.debounce( 250, search ) );
+
+
   }
   if (Modernizr.mq('only screen and (max-width: 768px)') ){
     $("#map").prependTo('.modal-body');
