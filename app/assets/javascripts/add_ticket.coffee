@@ -29,5 +29,24 @@ $ ->
           '> #{data.title} #{data.location}</div>"
         $('.reveal-add-itinerary').fadeIn()
 
+  $('.add-new-ticket-mobile').on 'submit', (e) ->
+    e.preventDefault()
+    if $('.add-new-ticket-mobile .add-new-ticket-location').val().length > 0
+      title = $('.add-new-ticket-mobile .add-new-ticket-title').val()
+      description = $('.add-new-ticket-mobile .add-new-ticket-description').val()
+      itinerary_id = $('.add-new-ticket-mobile .add-new-ticket-itinerary_id').val()
+      location = $('.add-new-ticket-mobile .add-new-ticket-location').val()
 
-
+      $.ajax
+        url: '/tickets'
+        type: 'POST'
+        data:
+          ticket:
+            title: title
+            description: description
+            itinerary_id: itinerary_id
+            location: location
+      .done (data) ->
+        $('.mobile-tickets').append "<div class='col-xs-12 itinerary-item text-center
+          '> #{data.title} #{data.location}</div>"
+        $("#myModal").modal('hide')

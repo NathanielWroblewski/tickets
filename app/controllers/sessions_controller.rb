@@ -1,17 +1,21 @@
 class SessionsController < ApplicationController
 
   def new
-    
   end
 
   def create
     @user = User.find_by_username(params[:username])
-    session[:id] = @user.id if @user.password == params[:password]
-    redirect_to '/itineraries/show'
+
+    # Where da bcrypt at yooooooo!
+    if @user && @user.password == params[:password]
+      session[:id] = @user.id
+      redirect_to '/itineraries/show'
+    else
+      redirect_to '/', notice: 'Invalid username or password!'
+    end
   end
 
   def delete
-    
   end
 
 end
