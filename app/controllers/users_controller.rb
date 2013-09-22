@@ -6,15 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
-      session[:id] = @user.id
-
-
-######
-      redirect_to @user #WHERE SHOULD THIS REDIRECT TO?????
-#######
-
+      redirect_to 'session#create'
     else
       render :new
+      # add flash notice
     end
   end
 
