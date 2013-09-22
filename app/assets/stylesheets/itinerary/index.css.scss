@@ -3,7 +3,16 @@
   height:100%;
   color:white;
   font-family: $defaultFont;
-  font-weight: $lightFont;
+  font-weight: $lighterFont;
+  min-height: 200px;
+  text-align: center;
+
+  h3{
+      color:white;
+  font-family: $defaultFont;
+  font-weight: $normalFont;
+
+  }
   // border:1px solid black;
   // /*height:100px;*/
   // /*background-color: $red;*/
@@ -44,6 +53,11 @@
   width:10%;
   margin:0 auto;
   float:right;
+}
+
+.upload-photo{
+  bottom:0;
+  position: relative;
 }
 
 .back1{
