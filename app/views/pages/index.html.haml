@@ -1,11 +1,11 @@
 .photos
   =image_tag 'index/rio-copy.jpg', height: '400px', width: '1520px'
 
-%form
+=form_tag sessions_path do
   %label_tag Username:
-  %input{}
+  =text_field_tag(:username)
   %label_tag Password:
   =password_field_tag
-  %button Log In
+  =submit_tag('Log In')
 
 %button Sign Up
