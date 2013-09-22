@@ -18,4 +18,11 @@ class RecommendationsController < ApplicationController
   	@tickets = Ticket.where(location: params[:destination])
   	render :_simple_recommendations, layout: false
   end
+
+  def search
+    @results = Ticket.where("location LIKE '%#{params[destination]}%'")
+    content_type :json
+    {results: @results}.to_json
+  end
+
 end

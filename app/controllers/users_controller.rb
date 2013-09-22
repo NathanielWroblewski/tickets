@@ -9,8 +9,7 @@ class UsersController < ApplicationController
       session[:id] = @user.id
       redirect_to '/itineraries/show'
     else
-      render :new
-      # add flash notice
+      render :new, notice: 'Error'
     end
   end
 

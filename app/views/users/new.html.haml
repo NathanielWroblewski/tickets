@@ -1,4 +1,4 @@
-.screen 
+.screen
   .row.screen-centered
     .col-xs-12.text-center.bottom-spaced
       .col-xs-12.logo
@@ -7,7 +7,7 @@
         %span.glyphicon.glyphicon-cutlery
         %span.glyphicon.glyphicon-gift
         %span.glyphicon.glyphicon-heart-empty
-        %br/ 
+        %br/
         %h1 TCKTS
       .centered.col-xs-6
         %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
@@ -45,7 +45,7 @@
                 = text_field_tag 'user[username]', '', class: 'form-control'
               .form-group.text-left
                 = label_tag 'Password:'
-                = text_field_tag 'user[password]', '', class: 'form-control'
+                = password_field_tag 'user[password]', '', class: 'form-control'
               .form-group.text-left
                 = label_tag 'Email:'
                 = email_field_tag 'user[email]', '', class: 'form-control'
