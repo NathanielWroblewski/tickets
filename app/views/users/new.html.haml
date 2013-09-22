@@ -17,13 +17,13 @@
               Login
               %button{class: 'close', data: {dismiss: 'modal'}} &times
             .modal-body
-              = form_tag '/login' do
+              = form_tag sessions_path do
                 .form-group.text-left
                   = label_tag 'username'
-                  = text_field_tag 'user[username]', '', class: 'form-control'
+                  = text_field_tag 'username', '', class: 'form-control'
                 .form-group.text-left
                   = label_tag 'password'
-                  = text_field_tag 'user[password]', '', class: 'form-control'
+                  = password_field_tag 'password', '', class: 'form-control'
                 %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Login
   .row.screen-centered
     .col-xs-12
@@ -34,14 +34,17 @@
               Register
               %button{class: 'close', data: {dismiss: 'modal'}} &times
             .modal-body
-              = form_tag '/register' do
+              =form_for @user do
                 .form-group.text-left
                   = label_tag 'username'
                   = text_field_tag 'user[username]', '', class: 'form-control'
                 .form-group.text-left
                   = label_tag 'password'
-                  = text_field_tag 'user[password]', '', class: 'form-control'
+                  = password_field_tag 'user[password]', '', class: 'form-control'
                 .form-group.text-left
                   = label_tag 'password_confirmation','Re-type password'
-                  = text_field_tag 'user[password_confirmation]', '', class: 'form-control'
+                  = password_field_tag 'user[password_confirmation]', '', class: 'form-control'
+                .form-group.text-left
+                  =label_tag 'email','Email'
+                  =email_field_tag 'user[email]', '', class: 'form-control'
                 %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Register

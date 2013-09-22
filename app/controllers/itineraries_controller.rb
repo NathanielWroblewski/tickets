@@ -8,7 +8,7 @@ class ItinerariesController < ApplicationController
     if current_user.itineraries.try(:first)
       @itinerary = current_user.itineraries.first
     else
-      @itinerary = current_user.itineraries.build
+      @itinerary = current_user.itineraries.create
     end
   end
 
