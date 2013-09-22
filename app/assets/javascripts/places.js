@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  alert('booya');
   var input = document.getElementById('places');
   var options = {
     types: ['(cities)']
