@@ -39,12 +39,13 @@
                     .col-xs-3
                       - if slice[0]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[0].photo.url, style: "max-width:100%;"
-                          %h3.text-center= slice[0].title
-                          %p.text-center= slice[0].location
-                          = form_for slice[0], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
+                          .jumbalaya{style: "height:200px;width:200px"}
+                            = image_tag slice[0].photo.url, style: "max-width:100%;"
+                            %h3.text-center= slice[0].title
+                            %p.text-center= slice[0].location
+                            = form_for slice[0], :html => { class: "photo-uploader" } do |form|
+                              = form.file_field :photo
+                              = form.submit 'Upload Photo'
                     .col-xs-3
                       - if slice[1]
                         %a.thumbnail{href: "#x"}
