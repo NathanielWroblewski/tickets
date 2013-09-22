@@ -1,6 +1,7 @@
 Prop::Application.routes.draw do
   root to: 'users#new'
 
+  post '/save_lat_long', to: 'itineraries#save_lat_long'
 
   resources :users, only: [:new, :create]
   resources :itineraries, only: [:index, :show]
