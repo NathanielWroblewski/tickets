@@ -6,4 +6,21 @@
         = form_tag '/', class: 'pin-it' do
           = label_tag :enter_your_location
           = text_field_tag :location
-          = submit_tag 'Pin It!'
+  .row
+    .col-xs-12
+      %h2 Itinerary
+      %ul
+        - if @itinerary
+          - @itinerary.tickets.each do |ticket|
+            %li
+              = ticket.location
+              = ticket.title
+      = form_tag '/', class: 'add-new-ticket' do
+        = label_tag :title
+        = text_field_tag :title, '', class: 'add-new-ticket-title'
+        = label_tag :description
+        = text_field_tag :description, '', class: 'add-new-ticket-description'
+        = label_tag :location
+        = text_field_tag :location, '', class: 'add-new-ticket-location'
+        = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
+        = submit_tag 'Add Itinerary Item'
