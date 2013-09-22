@@ -2,9 +2,9 @@
   =image_tag 'index/rio-copy.jpg', height: '400px', width: '1520px'
 
 =form_tag sessions_path do
-  %label_tag Username:
+  =label_tag 'Username:'
   =text_field_tag(:username)
-  %label_tag Password:
+  =label_tag 'Password:'
   =password_field_tag
   =submit_tag('Log In')
 
