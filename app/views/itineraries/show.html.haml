@@ -23,17 +23,17 @@
         .col-xs-6
           .row
             .col-xs-12
-              %h2.text-center Whats on my itinerary 
+              %h2.text-center Whats on my itinerary
               %ul{ class: 'my-itinerary' }
                 - if @itinerary && @itinerary.tickets.present?
                   - @itinerary.tickets.each do |ticket|
                     .col-xs-12.itinerary-item.text-center
-                      = image_tag ticket.photo.url
+                      = image_tag ticket.photo.url, style: 'height:100px;width:100px;'
                       = ticket.location
                       = ticket.title
                       = form_for ticket, :url => '#', :html => { class: "photo-uploader", multipart: true } do |form|
                         = form.file_field :photo
-                        = form.submit "submit"
+                        = form.submit 'Upload Photo'
 .visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row
     - if @itinerary && @itinerary.tickets.present?
