@@ -10,7 +10,7 @@
   .row
     .col-xs-12
       %h2 Itinerary
-      %ul
+      %ul{ class: 'my-itinerary' }
         - if @itinerary
           - @itinerary.tickets.each do |ticket|
             %li
