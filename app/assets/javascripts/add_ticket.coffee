@@ -1,4 +1,9 @@
 $ ->
+  $('.revealed-add-itinerary').hide()
+
+  $('.reveal-add-itinerary').on 'click', ->
+    $('.revealed-add-itinerary').fadeIn()
+
   $('.add-new-ticket').on 'submit', (e) ->
     e.preventDefault()
     if $(@).find('.add-new-ticket-location').val().length > 0
