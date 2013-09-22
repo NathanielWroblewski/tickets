@@ -10,7 +10,7 @@ Prop::Application.routes.draw do
   resources :users, only: [:new, :create]
   resources :itineraries, only: [:index, :show]
   resources :pages, only: [:index, :show]
-  resources :tickets, only: :create
+  resources :tickets#, only: :create
   resources :sessions, only: [:create, :delete, :new]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
