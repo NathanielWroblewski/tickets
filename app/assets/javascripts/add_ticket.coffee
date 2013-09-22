@@ -47,6 +47,8 @@ $ ->
             itinerary_id: itinerary_id
             location: location
       .done (data) ->
-        $('.mobile-tickets').append "<div class='col-xs-12 itinerary-item text-center
+        $('.mobile-tickets').prepend "<div class='col-xs-12 itinerary-item text-center
           '> #{data.title} #{data.location}</div>"
         $("#myModal").modal('hide')
+        $(".add-new-ticket-mobile")[0].reset();
+
