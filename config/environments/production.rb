@@ -18,9 +18,9 @@ Prop::Application.configure do
     :storage => :s3,
     :s3_protocol => 'http',
     :s3_credentials => {
-      :bucket => ENV['AWS_BUCKET'],
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+      :bucket => "emirateshackathon.tckts",
+      :access_key_id => "AKIAITHRDZ2EDCI4M2ZA",
+      :secret_access_key => "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"]
     }
   }
 end

@@ -36,7 +36,9 @@
     <span><a class='glyphicon glyphicon-th-list'href='/itineraries/show'></a> </span>
     <span><a class='glyphicon glyphicon-random' href='/recommendations'></a></span>
     <% if current_user %>
-      <span><a class='glyphicon glyphicon-log-out' href='/sessions/<%= current_user.id %>'></a></span>
+      <span>
+        <%= link_to '', "/sessions/#{current_user.id}", method: :delete, :class => 'glyphicon glyphicon-log-out' %>
+      </span>
     <% end %>
   </span>
 </div>

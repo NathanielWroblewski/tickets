@@ -38,38 +38,32 @@
               - @itinerary.tickets.each_slice(4) do |slice|
                 - if slice[0] == @itinerary.tickets.first
                   .item.active
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[0]
-                        %a.thumbnail{href: "#x"}
-                          .jumbalaya{style: "height:200px;width:200px"}
-                            = image_tag slice[0].photo.url, style: "max-width:100%;"
-                            %h3.text-center= slice[0].title
-                            %p.text-center= slice[0].location
-                            = form_for slice[0], :html => { class: "photo-uploader" } do |form|
-                              = form.file_field :photo
-                              = form.submit 'Upload Photo'
-                    .col-xs-3
+                        %h3.text-center= slice[0].title
+                        %p.text-center= slice[0].location
+                        = form_for slice[0], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
+                    .col-xs-3.itinerary-item.back2
                       - if slice[1]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[1].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[1].title
                           %p.text-center= slice[1].location
                           = form_for slice[1], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[2]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[2].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[2].title
                           %p.text-center= slice[2].location
                           = form_for slice[2], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back4
                       - if slice[3]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[3].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[3].title
                           %p.text-center= slice[3].location
                           = form_for slice[3], :html => { class: "photo-uploader" } do |form|
@@ -77,37 +71,33 @@
                             = form.submit 'Upload Photo'
                 - else
                   .item
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[0]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[0].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[0].title
                           %p.text-center= slice[0].location
                           = form_for slice[0], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[1]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[1].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[1].title
                           %p.text-center= slice[1].location
                           = form_for slice[1], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[2]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[2].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[2].title
                           %p.text-center= slice[2].location
                           = form_for slice[2], :html => { class: "photo-uploader" } do |form|
                             = form.file_field :photo
                             = form.submit 'Upload Photo'
-                    .col-xs-3
+                    .col-xs-3.itinerary-item.back1
                       - if slice[3]
                         %a.thumbnail{href: "#x"}
-                          = image_tag slice[3].photo.url, style: "max-width:100%;"
                           %h3.text-center= slice[3].title
                           %p.text-center= slice[3].location
                           = form_for slice[3], :html => { class: "photo-uploader" } do |form|
