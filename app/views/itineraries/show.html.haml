@@ -47,62 +47,55 @@
                           = form.submit 'Upload Photo'
                     .col-xs-3.itinerary-item.back2
                       - if slice[1]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[1].title
-                          %p.text-center= slice[1].location
-                          = form_for slice[1], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
-                    .col-xs-3.itinerary-item.back1
+                        %h3.text-center= slice[1].title
+                        %p.text-center= slice[1].location
+                        = form_for slice[1], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
+                    .col-xs-3.itinerary-item.back3
                       - if slice[2]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[2].title
-                          %p.text-center= slice[2].location
-                          = form_for slice[2], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
+                        %h3.text-center= slice[2].title
+                        %p.text-center= slice[2].location
+                        = form_for slice[2], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
                     .col-xs-3.itinerary-item.back4
                       - if slice[3]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[3].title
-                          %p.text-center= slice[3].location
-                          = form_for slice[3], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
+                        %h3.text-center= slice[3].title
+                        %p.text-center= slice[3].location
+                        = form_for slice[3], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
                 - else
                   .item
-                    .col-xs-3.itinerary-item.back1
+                    .col-xs-3.itinerary-item.back2
                       - if slice[0]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[0].title
-                          %p.text-center= slice[0].location
-                          = form_for slice[0], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
-                    .col-xs-3.itinerary-item.back1
+                        %h3.text-center= slice[0].title
+                        %p.text-center= slice[0].location
+                        = form_for slice[0], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
+                    .col-xs-3.itinerary-item.back3
                       - if slice[1]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[1].title
-                          %p.text-center= slice[1].location
-                          = form_for slice[1], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
+                        %h3.text-center= slice[1].title
+                        %p.text-center= slice[1].location
+                        = form_for slice[1], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
                     .col-xs-3.itinerary-item.back1
                       - if slice[2]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[2].title
-                          %p.text-center= slice[2].location
-                          = form_for slice[2], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
-                    .col-xs-3.itinerary-item.back1
+                        %h3.text-center= slice[2].title
+                        %p.text-center= slice[2].location
+                        = form_for slice[2], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
+                    .col-xs-3.itinerary-item.back4
                       - if slice[3]
-                        %a.thumbnail{href: "#x"}
-                          %h3.text-center= slice[3].title
-                          %p.text-center= slice[3].location
-                          = form_for slice[3], :html => { class: "photo-uploader" } do |form|
-                            = form.file_field :photo
-                            = form.submit 'Upload Photo'
+                        %h3.text-center= slice[3].title
+                        %p.text-center= slice[3].location
+                        = form_for slice[3], :html => { class: "photo-uploader" } do |form|
+                          = form.file_field :photo
+                          = form.submit 'Upload Photo'
         %a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"} ‹
         %a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"} ›
 :javascript
