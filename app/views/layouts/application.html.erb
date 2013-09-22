@@ -16,7 +16,7 @@
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script>
 </head>
 <body>
-
+<% if current_user %>
 <nav class="navbar navbar-default" role="navigation">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
@@ -35,11 +35,9 @@
   <span class='layout-nav-bar navbar-brand'>
     <span><a class='glyphicon glyphicon-th-list'href='/itineraries/show'></a> </span>
     <span><a class='glyphicon glyphicon-random' href='/recommendations'></a></span>
-    <% if current_user %>
       <span>
         <%= link_to '', "/sessions/#{current_user.id}", method: :delete, :class => 'glyphicon glyphicon-log-out' %>
       </span>
-    <% end %>
   </span>
 </div>
   <!-- Collect the nav links, forms, and other content for toggling -->
@@ -53,7 +51,7 @@
     </ul> -->
   <!-- </div> --><!-- /.navbar-collapse -->
 </nav>
-
+<% end %>
   <%= yield %>
 
 </body>
