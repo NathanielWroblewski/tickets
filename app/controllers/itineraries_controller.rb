@@ -37,4 +37,12 @@ class ItinerariesController < ApplicationController
     render json: location_info
   end
 
+  def search_query
+  	query = params['query'].sub(" ", "%20")
+  	response = HTTParty.post("http://www.geocodefarm.com/api/forward/json/65caadac07b171d25d08af0153a382022f05129e/#{query}/")
+    results = JSON.parse(response.body)['geocoding_results']['COORDINATES']
+
+    render json: results
+  end
+
 end
