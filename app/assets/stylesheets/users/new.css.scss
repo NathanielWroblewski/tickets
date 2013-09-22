@@ -3,7 +3,7 @@
 .bottom-spaced { margin-bottom: px-to-em(10px); }
 
 .screen {
-  background: asset-url('background-0.png') no-repeat center center fixed;
+  background: image-url('background-0.png') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
