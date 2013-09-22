@@ -19,7 +19,7 @@ class ItinerariesController < ApplicationController
     location_info = {}
 
     # the api key is hardcoded in, i blame this on Nate
-    response = HTTParty.post("http://www.geocodefarm.com/api/reverse/json/65caadac07b171d25d08af0153a382022f05129e/#{lat}/#{long}/")
+    response = HTTParty.post("http://www.geocodefarm.com/api/reverse/json/f1472b893a590a8bed1b305dd1decf09f5297223/#{lat}/#{long}/")
     results = JSON.parse(response.body)['geocoding_results']['ADDRESS']['address']
     if results.include? "USA"
     	results = results.split(", ")
@@ -40,7 +40,7 @@ class ItinerariesController < ApplicationController
 
   def search_query
   	query = params['query'].sub(" ", "%20")
-  	response = HTTParty.post("http://www.geocodefarm.com/api/forward/json/65caadac07b171d25d08af0153a382022f05129e/#{query}/")
+  	response = HTTParty.post("http://www.geocodefarm.com/api/forward/json/f1472b893a590a8bed1b305dd1decf09f5297223/#{query}/")
     results = JSON.parse(response.body)['geocoding_results']['COORDINATES']
 
     render json: results
