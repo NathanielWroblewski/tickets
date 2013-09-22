@@ -1,50 +1,89 @@
-.container.screen
+.visible-md.visible-lg.web-version
+  / #carousel-example-generic.carousel.slide
+  / / Indicators
+  / %ol.carousel-indicators
+  /   %li.active{"data-slide-to" => "0", "data-target" => "#carousel-example-generic"}
+  /   %li{"data-slide-to" => "1", "data-target" => "#carousel-example-generic"}
+  /   %li{"data-slide-to" => "2", "data-target" => "#carousel-example-generic"}
+  / / Wrapper for slides
+  / .carousel-inner
+  /   .item.active
+  /     =image_tag 'index/rio-copy.jpg'
+  /     .carousel-caption
+  /       \...
+
+  /   .item
+  /     =image_tag 'index/rio-copy.jpg'
+  /     .carousel-caption
+  /       \...
+
+  /   .item
+  /     =image_tag 'index/rio-copy.jpg'
+  /     .carousel-caption
+  /       \...
+  /   \...
+  / / Controls
+  / %a.left.carousel-control{"data-slide" => "prev", href: "#carousel-example-generic"}
+  /   %span.icon-prev
+  / %a.right.carousel-control{"data-slide" => "next", href: "#carousel-example-generic"}
+  /   %span.icon-next
+    
+  .jumbotron
+    %h1 TCKT
+    %p WTF 2DO 2DAY? TCKT HLPS PPL LKE U.
+    %button.btn.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
+    %button.btn.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-register'}} Register
+
+
+
+
+
+
+
+.screen.visible-sm.visible-xs.col-xs-12.col-sm-12.col-md-12
   .row.screen-centered
     .col-xs-12.text-center.logo.bottom-spaced
-      TCKT
+      %h1 TCKT
   .row.bottom-spaced
     .col-xs-10.centered
       %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-login'}} Login
   .row
     .col-xs-10.centered
       %button.btn.btn-block.btn-lg.white-bg{data: {toggle: 'modal', target: '#user-register'}} Register
-  .row.screen-centered
-    .col-xs-12
-      .modal.fade#user-login{role: 'dialog', tabindex: '-1'}
-        .modal-dialog
-          .modal-content
-            .modal-header
-              Login
-              %button{class: 'close', data: {dismiss: 'modal'}} &times
-            .modal-body
-              = form_tag sessions_path do
-                .form-group.text-left
-                  = label_tag 'username'
-                  = text_field_tag 'username', '', class: 'form-control'
-                .form-group.text-left
-                  = label_tag 'password'
-                  = password_field_tag 'password', '', class: 'form-control'
-                %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Login
-  .row.screen-centered
-    .col-xs-12
-      .modal.fade#user-register{role: 'dialog', tabindex: '-1'}
-        .modal-dialog
-          .modal-content
-            .modal-header
-              Register
-              %button{class: 'close', data: {dismiss: 'modal'}} &times
-            .modal-body
-              =form_for @user do
-                .form-group.text-left
-                  = label_tag 'username'
-                  = text_field_tag 'user[username]', '', class: 'form-control'
-                .form-group.text-left
-                  = label_tag 'password'
-                  = password_field_tag 'user[password]', '', class: 'form-control'
-                .form-group.text-left
-                  = label_tag 'password_confirmation','Re-type password'
-                  = password_field_tag 'user[password_confirmation]', '', class: 'form-control'
-                .form-group.text-left
-                  =label_tag 'email','Email'
-                  =email_field_tag 'user[email]', '', class: 'form-control'
-                %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Register
+.row.screen-centered
+  .col-xs-12
+    .modal.fade#user-login{role: 'dialog', tabindex: '-1'}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            Login
+            %button{class: 'close', data: {dismiss: 'modal'}} &times
+          .modal-body
+            = form_tag sessions_path do
+              .form-group.text-left
+                = label_tag 'Username:'
+                = text_field_tag :username, '', class: 'form-control'
+              .form-group.text-left
+                = label_tag 'Password:'
+                = text_field_tag 'user[password]', '', class: 'form-control'
+              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Login
+.row.screen-centered
+  .col-xs-12
+    .modal.fade#user-register{role: 'dialog', tabindex: '-1'}
+      .modal-dialog
+        .modal-content
+          .modal-header
+            Register
+            %button{class: 'close', data: {dismiss: 'modal'}} &times
+          .modal-body
+            = form_for @user do
+              .form-group.text-left
+                =label_tag 'Username:'
+                = text_field_tag 'user[username]', '', class: 'form-control'
+              .form-group.text-left
+                = label_tag 'Password:'
+                = text_field_tag 'user[password]', '', class: 'form-control'
+              .form-group.text-left
+                = label_tag 'Email:'
+                = email_field_tag 'user[email]', '', class: 'form-control'
+              %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Register

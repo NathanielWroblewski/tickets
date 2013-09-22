@@ -7,8 +7,15 @@ html, body {
   margin: 0 auto;
 }
 
+
 @import 'variables',
         'users/*',
         'itinerary/*',
         'recommendations/*',
         'map';
+
+.navbar-brand {
+  color:$white;
+  font-weight: $lightFont;
+  font-family: $defaultFont;
+}

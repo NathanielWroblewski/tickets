@@ -2,19 +2,26 @@
 
 .bottom-spaced { margin-bottom: px-to-em(10px); }
 
-.container.screen {
-  background: image-url('background-0.png');
+.screen {
+  background: image-url('background-0.png') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   background-size: cover;
   height: 100%;
-  width: 100%;
+  // width: 100%;
   text-align: center;
-
-  .screen-centered {
-    margin-top: 30%;
+  h1{
+    font-family: $defaultFont;
+    font-size: $largerFont;
+    font-weight: $lightFont;
   }
 
+  .screen-centered {
+    padding-top: 30%;
+  }
   .modal {
-    padding-top: 15%;
+    // padding-top: 15%;
   }
 }
 
@@ -30,3 +37,16 @@
 }
 
 body.modal-open { margin: 0; padding: 0; }
+
+
+.web-version{
+  .jumbotron{
+    background-image: url("index/rio-copy.jpg");
+    color:$white;
+    h1{
+      font-family: $defaultFont;
+      font-size: $jumboFont;
+      font-weight: $lightFont;
+    }
+  }
+}
