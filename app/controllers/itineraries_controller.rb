@@ -5,7 +5,7 @@ class ItinerariesController < ApplicationController
   end
 
   def show
-    if current_user.itineraries.first
+    if current_user.itineraries.try(:first)
       @itinerary = current_user.itineraries.first
     else
       @itinerary = current_user.itineraries.build
