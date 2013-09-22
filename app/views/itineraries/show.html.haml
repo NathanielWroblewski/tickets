@@ -43,8 +43,8 @@
           = ticket.location
           = ticket.title
           = form_for ticket, :html => { class: "photo-uploader" } do |form|
-                = form.file_field :photo
-                = form.submit "Submit"
+            = form.file_field :photo
+            = form.submit "Submit"
     .well{style: "max-width: 400px; margin: 0 auto 10px;"}
       %button.btn.btn-primary.btn-lg.btn-block{"data-toggle" => "modal", href: "#myModal", type: "button"} Add Itinerary
       = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-lg btn-block'
