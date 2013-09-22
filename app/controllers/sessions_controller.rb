@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     if @user && @user.password == params[:password]
       redirect_to '/itineraries/show'
     else
-      redirect_to 'user#new'
+      redirect_to '/'
     end
   end
 
