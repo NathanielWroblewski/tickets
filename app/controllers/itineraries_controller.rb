@@ -16,7 +16,7 @@ class ItinerariesController < ApplicationController
     lat = params[:lat].to_f
     long = params[:long].to_f
     location_info = {}
-    
+
     # the api key is hardcoded in, i blame this on Nate
     response = HTTParty.post("http://www.geocodefarm.com/api/reverse/json/65caadac07b171d25d08af0153a382022f05129e/#{lat}/#{long}/")
     results = JSON.parse(response.body)['geocoding_results']['ADDRESS']['address']
