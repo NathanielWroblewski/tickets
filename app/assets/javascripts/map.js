@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  $(".spinner").hide()
 
   if ($('#map').length > 0) {
     var latitude  = 25.2000;
@@ -21,25 +22,32 @@ $(document).ready(function(){
   marker.dragging.enable();
 
   marker.on('dragend', function(e){
+    $('.revealed-add-itinerary').fadeIn()
     var latitude = marker.getLatLng().lat;
     var longitude = marker.getLatLng().lng;
+    $(".spinner").show()
     $.ajax({
       url: '/save_lat_long',
       type: 'POST',
       data: { lat: latitude, long: longitude }
     }).done(function(data){
       $('.add-new-ticket-location').val(data.city + ', ' + data.region)
+      $(".spinner").hide()
+
     });
   });
 
   $('.search-text').on( 'submit', function(e) {
     e.preventDefault();
+    $(".spinner").show()
     var query = $('.pin-it #places').val()
     $.ajax({
       url: '/search_query',
       type: 'POST',
       data: { query: query }
     }).done(function(data){
+    $(".spinner").hide()
+
       var locLatitude = parseFloat(data.latitude);
       var locLongitude = parseFloat(data.longitude);
       map.removeLayer(marker);

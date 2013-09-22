@@ -1,6 +1,5 @@
 $ ->
   $('.revealed-add-itinerary').hide()
-
   $('.reveal-add-itinerary').on 'click', ->
     $('.revealed-add-itinerary').fadeIn()
     $(@).hide()
