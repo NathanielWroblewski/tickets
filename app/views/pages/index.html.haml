@@ -8,4 +8,11 @@
   =password_field_tag
   =submit_tag('Log In')
 
-%button Sign Up
+=form_tag users_path do
+  =label_tag 'Username:'
+  =text_field_tag 'user[username]'
+  =label_tag 'Password:'
+  =password_field_tag 'user[password]'
+  =email_field_tag 'Email:'
+  =password_field_tag 'user[email]'
+  %button Sign Up
