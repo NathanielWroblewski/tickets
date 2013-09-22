@@ -1,5 +1,6 @@
 .content.text-center
   %h2 Where are you traveling?
+  %small Sorry but we here at TCKTS don't have enough information about what you are currently interested in. Try searching for a location and we can reccomend ideas for you!
   %form.recommendation-location
     =text_field_tag('', '', class: 'recommendations-destination')
-    =submit_tag('Submit')
+    =submit_tag('Submit', :class => "btn btn-success btn-lrg"
