@@ -10,4 +10,4 @@ TCKT.ES is a site to help travelers find events and things to do that they didn'
 Screen Shot
 ---
 
-![Screen Shot](http://i.imgur.com/zEOQFT8.jpg)
+![Screen Shot](http://i.imgur.com/zEOQFT8.jpg?1)
