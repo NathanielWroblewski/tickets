@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:id] = @user.id
-      redirect_to itineraries_path
+      redirect_to '/itineraries/show'
     else
       render :new
       # add flash notice
