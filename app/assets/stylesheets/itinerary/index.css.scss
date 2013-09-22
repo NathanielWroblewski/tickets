@@ -18,21 +18,6 @@
     font-family: $defaultFont;
     font-weight: $normalFont;
   }
-
-  // border:1px solid black;
-  // /*height:100px;*/
-  // /*background-color: $red;*/
-  // color:$black;
-  // font-family: $defaultFont;
-  // font-weight: $lighterFont;
-  // font-size: $largeFont;
-  // z-index: 99;
-  .itinerary-image{
-  // z-index: -5;
-  // width:100%;
-  // opacity: 0.4;
-  /*position:absolute;*/
-}
 }
 
 .pin-it{
@@ -46,9 +31,6 @@
 #map{
   z-index: 1;
   position: relative;
-}
-.add-new-ticket-location{
-
 }
 .spinner{
   z-index: 999;
@@ -69,14 +51,11 @@
  opacity: 0;
  filter: alpha(opacity = 0);-ms-filter: "alpha(opacity=0)";
  cursor: pointer;
- _cursor: hand;
  margin: 0;
  padding:0;
  left:0;
 }
-.photo-field{
 
-}
 .back1{
   background-image: url("pic1.jpg");
   background-size:cover;
