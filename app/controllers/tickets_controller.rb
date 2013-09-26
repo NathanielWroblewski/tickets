@@ -1,7 +1,12 @@
 class TicketsController < ApplicationController
 
   def create
-    ticket = Ticket.new(params[:ticket])
+    ticket = Ticket.new(params[:ticket].permit(
+      :itinerary_id,
+      :title,
+      :location,
+      :description)
+    )
     if ticket.save
       current_user.itineraries.first.tickets << ticket
       render json: {
