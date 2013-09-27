@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'faker'
 gem 'newrelic_rpm'
+gem 'bcrypt-ruby', '~> 3.0.0'
 # gem 'fog'
 
 group :doc do

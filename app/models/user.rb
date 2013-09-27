@@ -1,8 +1,15 @@
 class User < ActiveRecord::Base
   has_many :itineraries
 
-  attr_accessible :username, :email, :password
+  has_secure_password
+
+  attr_accessible :username, :email, :password, :password_confirmation
 
   validates :username, uniqueness: true
-  validates_format_of :email, :with => /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i, :on => :create
+  validates_presence_of :password, :on => :create
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, presence:   true,
+                    format:     { with: VALID_EMAIL_REGEX },
+                    uniqueness: { case_sensitive: false }
 end
