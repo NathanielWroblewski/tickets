@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     @user = User.find_by_username(params[:username])
 
     # Where da bcrypt at yooooooo!
-    if @user && @user.password == params[:password]
+    # AIN'T NOBODY GOT TIME FO DAT!!!
+    if @user && @user.authenticate(params[:password])
       session[:id] = @user.id
       redirect_to '/itineraries/show'
     else

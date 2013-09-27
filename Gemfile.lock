@@ -18,20 +18,20 @@ GIT
 
 GIT
   remote: git://github.com/rspec/rspec-core.git
-  revision: 9362e65fc358a60545ea58912c0885657bb61207
+  revision: 3091424962852fd88890fe9a9359e863400caf12
   specs:
     rspec-core (3.0.0.pre)
 
 GIT
   remote: git://github.com/rspec/rspec-expectations.git
-  revision: 02c89895e5034638396cedc7816f83bc62ebf2da
+  revision: a74dee7a8a50df0f0d11e62697f1cf3b6ac39a61
   specs:
     rspec-expectations (3.0.0.pre)
       diff-lcs (>= 1.1.3, < 2.0)
 
 GIT
   remote: git://github.com/rspec/rspec-mocks.git
-  revision: 331b4b3c48a48fc98cad3c354a78f1ff14d2b99d
+  revision: 8e1a653def54f0ec3af2af8401fea4eac605087d
   specs:
     rspec-mocks (3.0.0.pre)
 
@@ -102,10 +102,11 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.0)
     atomic (1.1.14)
+    bcrypt-ruby (3.0.1)
     builder (3.1.4)
     climate_control (0.0.3)
       activesupport (>= 3.0)
-    cocaine (0.5.1)
+    cocaine (0.5.2)
       climate_control (>= 0.0.3, < 1.0)
     coderay (1.0.9)
     coffee-rails (4.0.0)
@@ -145,7 +146,7 @@ GEM
       guard (>= 1.1)
     haml (4.0.3)
       tilt
-    haml_coffee_assets (1.13.2)
+    haml_coffee_assets (1.14.0)
       coffee-script (>= 1.0.0)
       sprockets (>= 2.0.3)
       tilt (>= 1.3.3)
@@ -197,8 +198,8 @@ GEM
       activesupport (>= 3.0.0)
       cocaine (~> 0.5.0)
       mime-types
-    parallel (0.8.3)
-    parallel_tests (0.15.4)
+    parallel (0.8.4)
+    parallel_tests (0.16.0)
       parallel
     pg (0.17.0)
     polyglot (0.3.3)
@@ -280,6 +281,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby (~> 3.0.0)
   capybara!
   capybara-webkit!
   coffee-rails (~> 4.0.0)
