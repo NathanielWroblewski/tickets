@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130922044528) do
+ActiveRecord::Schema.define(version: 20130926204302) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,6 @@ ActiveRecord::Schema.define(version: 20130922044528) do
   end
 
   create_table "tickets", force: true do |t|
-    t.datetime "when"
     t.string   "title"
     t.string   "description"
     t.string   "blog_url"
@@ -32,6 +31,8 @@ ActiveRecord::Schema.define(version: 20130922044528) do
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "users", force: true do |t|

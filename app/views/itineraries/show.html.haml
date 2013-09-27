@@ -23,7 +23,7 @@
             = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
             .modal-footer
               %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
-              = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
+              = link_to 'recommendations#show',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
         %button{class: 'btn btn-lg btn-block btn-primary reveal-add-itinerary'} Add Event
   .row.wtf
     .col-xs-8.col-sm-offset-2
@@ -163,7 +163,7 @@
           = text_field_tag :location, '', {class: 'form-control add-new-ticket-location',placeholder: 'Dubai'}
           = hidden_field_tag :itinerary_id, "#{ @itinerary.id if @itinerary }", class: 'add-new-ticket-itinerary_id'
           %button{type: 'submit', class: 'btn btn-lg btn-block btn-primary'} Submit
-          = link_to 'Recommendations',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
+          = link_to 'recommendations#show',recommendations_path, :class => 'btn btn-default btn-xs btn-lg btn-block'
     / /.modal-content
   / /.modal-dialog
 / /.modal
