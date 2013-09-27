@@ -5,7 +5,7 @@ TCKT
 
 Description
 ---
-TCKT.ES is a site to help travelers find events and things to do that they didn't know existed.  It also allows travelers to share their pictures, blogs, and connect with other travelers.  TCKT.ES is built with mobile first in mind.
+TCKT.ES is a site to help travelers find events and things to do that they didn't know existed.  It also allows travelers to share their pictures, blogs, and connect with other travelers.  TCKT.ES is built mobile first.
 
 Screen Shot
 ---
